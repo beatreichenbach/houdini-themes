@@ -175,16 +175,16 @@ MultiParmHoverBG:       GREY(0.3)
 MultiParmDragBG:        SELECTION_BASE
 MultiParmDragLine:      SELECTION_BASE
 
-Separator:          GREY(0.3)
+Separator:              GREY(0.3)
+    
+CheckBG:                EDIT_BG
+CheckLocated:           BUTTON_SEL
+CheckColor:             TEXT
 
-CheckBG:            EDIT_BG
-CheckLocated:       BUTTON_SEL
-CheckColor:         TEXT
-
-RadioBG:            EDIT_BG
-RadioBorder:        GREY(0.75)
-RadioDot:           TEXT
-RadioDotHighlight:  BUTTON_SEL
+RadioBG:                EDIT_BG
+RadioBorder:            GREY(0.75)
+RadioDot:               TEXT
+RadioDotHighlight:      BUTTON_SEL
 
 TextboxBG:              EDIT_BG
 TextboxInvalidBG:       0.95 0.56 0.56
@@ -212,47 +212,47 @@ SliderTick:             GREY(0.6)
 SliderTickLabel:        GREY(0.7)
 SliderRangeBrackets:    BLACK
 
-SliderThumbGradHi:          GREY(0.6)
-SliderThumbGradLow:         GREY(0.45)
-SliderThumbPressedGradHi:   PRESSED_HIGH // 0.45 0.45 0.2
-SliderThumbPressedGradLow:  PRESSED_LOW // 0.45 0.45 0.2
-SliderThumbTopBorder:       GREY(0.2)
-SliderThumbTopBevel:        GREY(0.7)
-SliderThumbBottomBevel:     GREY(0.3)
-SliderThumbBottomBorder:    BLACK
-SliderThumbRangeArrow:      BLACK
+SliderThumbGradHi:                  GREY(0.6)
+SliderThumbGradLow:                 GREY(0.45)
+SliderThumbPressedGradHi:           PRESSED_HIGH // 0.45 0.45 0.2
+SliderThumbPressedGradLow:          PRESSED_LOW // 0.45 0.45 0.2
+SliderThumbTopBorder:               GREY(0.2)
+SliderThumbTopBevel:                GREY(0.7)
+SliderThumbBottomBevel:             GREY(0.3)
+SliderThumbBottomBorder:            BLACK
+SliderThumbRangeArrow:              BLACK
 
-RangeSliderBackground:      EDIT_BG
-RangeSliderRect:            GREY(0.45)
-RangeSliderRectLocated:     GREY(0.65)
-RangeSliderRectSelected:    GREY(1.00)
-RangeSliderArrow:           GREY(0.65)
-RangeSliderArrowLocated:    GREY(0.85)
-RangeSliderArrowSelected:   GREY(1.00)
+RangeSliderBackground:              EDIT_BG
+RangeSliderRect:                    GREY(0.45)
+RangeSliderRectLocated:             GREY(0.65)
+RangeSliderRectSelected:            GREY(1.00)
+RangeSliderArrow:                   GREY(0.65)
+RangeSliderArrowLocated:            GREY(0.85)
+RangeSliderArrowSelected:           GREY(1.00)
 
-LeverSliderBG:                  GREY(0.12)
-LeverSliderTopBevel:            GREY(0.16)
-LeverSliderBottomBevel:         GREY(0.32)
-LeverSliderLeftBevel:           GREY(0.17)
-LeverSliderRightBevel:          GREY(0.25)
-LeverSliderFilledBevelTop:      #3d4a60
-LeverSliderFilled:              #4b5f7d
-LeverSliderFilledBevelBottom:   #272a30
-LeverSliderTick:                GREY(0.17)
+LeverSliderBG:                      GREY(0.12)
+LeverSliderTopBevel:                GREY(0.16)
+LeverSliderBottomBevel:             GREY(0.32)
+LeverSliderLeftBevel:               GREY(0.17)
+LeverSliderRightBevel:              GREY(0.25)
+LeverSliderFilledBevelTop:          #3d4a60
+LeverSliderFilled:                  #4b5f7d
+LeverSliderFilledBevelBottom:       #272a30
+LeverSliderTick:                    GREY(0.17)
 
-LeverSliderValueText:           GREY(0.75)
-LeverSliderThumbText:           GREY(0.77)
+LeverSliderValueText:               GREY(0.75)
+LeverSliderThumbText:               GREY(0.77)
 
-LeverSliderThumbTopBevel:       GREY(0.36)
-LeverSliderThumbBottomBevel:    GREY(0.09)
-LeverSliderThumbTopBorder:      GREY(0.2)
-LeverSliderThumbBottomBorder:   BLACK
-LeverSliderThumbGradBottom:     GREY(0.22)
-LeverSliderThumbGradTop:        GREY(0.36)
-LeverSliderThumbRangeArrow:     BLACK
+LeverSliderThumbTopBevel:           GREY(0.36)
+LeverSliderThumbBottomBevel:        GREY(0.09)
+LeverSliderThumbTopBorder:          GREY(0.2)
+LeverSliderThumbBottomBorder:       BLACK
+LeverSliderThumbGradBottom:         GREY(0.22)
+LeverSliderThumbGradTop:            GREY(0.36)
+LeverSliderThumbRangeArrow:         BLACK
 
-LeverSliderThumbPressedGradBottom: PRESSED_HIGH
-LeverSliderThumbPressedGradTop:    PRESSED_LOW
+LeverSliderThumbPressedGradBottom:  PRESSED_HIGH
+LeverSliderThumbPressedGradTop:     PRESSED_LOW
 
 
 KeyframeButtonSelectedGradHi:       GREY(0.5067645)
@@ -268,24 +268,24 @@ KeyframeButtonCirclePending:        HSV 39 1 0.9
 KeyframeButtonBorder:               BLACK
 KeyframeButtonCircleFillOpacity:    GREY(0.2)
 
-LadderBG:                   EDIT_BG
-LadderText:                 TEXT
-LadderHighlight:            SELECTION_BASE
-LadderOutline:              GREY(0.5)
-LadderShadow:               UNK
+LadderBG:                       EDIT_BG
+LadderText:                     TEXT
+LadderHighlight:                SELECTION_BASE
+LadderOutline:                  GREY(0.5)
+LadderShadow:                   UNK
 
-ScrollbarUpperBorder:       DRKBASE
-ScrollbarBottomBorder:      BLACK
-ScrollbarWell:              WELL
-ScrollbarWellShadow1:       WELL
-ScrollbarWellShadow2:       WELL
-ScrollbarWellShadow3:       WELL
-ScrollbarWellShadowBlend12: WELL
-ScrollbarWellShadowBlend13: WELL
-ScrollbarWellShadowBlend22: WELL
-ScrollbarWellShadowBlend23: WELL
-ScrollbarWellShadowBlend32: WELL
-ScrollbarWellShadowBlend33: WELL
+ScrollbarUpperBorder:           DRKBASE
+ScrollbarBottomBorder:          BLACK
+ScrollbarWell:                  WELL
+ScrollbarWellShadow1:           WELL
+ScrollbarWellShadow2:           WELL
+ScrollbarWellShadow3:           WELL
+ScrollbarWellShadowBlend12:     WELL
+ScrollbarWellShadowBlend13:     WELL
+ScrollbarWellShadowBlend22:     WELL
+ScrollbarWellShadowBlend23:     WELL
+ScrollbarWellShadowBlend32:     WELL
+ScrollbarWellShadowBlend33:     WELL
 
 
 ScrollbarThumbTopBorder:        DRKGRADHIGH
@@ -407,40 +407,40 @@ CreateAssetBranch:          #ccffcc // green
 CreateAssetBasename:        #ffffcc // yellow
 CreateAssetVersion:         #ffcccc // pink
 
-InfoBG:             BLACK
-InfoText:           TEXT
+InfoBG:                     BLACK
+InfoText:                   TEXT
 
-PopupHelpBG:        BLACK
-PopupHelpFG:        TEXT
-PopupHelpHotkeyFG:  SHADOW2
-PopupExtraHelpFG:   TEXT
-PopupExtraHelpBG:   HSV 220 0.425 0.4
+PopupHelpBG:                BLACK
+PopupHelpFG:                TEXT
+PopupHelpHotkeyFG:          SHADOW2
+PopupExtraHelpFG:           TEXT
+PopupExtraHelpBG:           HSV 220 0.425 0.4
 
-ShelfGradHi:        DRKGRADHIGH
-ShelfGradMidHi:     DRKGRADMID
-ShelfGradMidLow:    DRKGRADMID
-ShelfGradLow:       DRKGRADLOW
+ShelfGradHi:                DRKGRADHIGH
+ShelfGradMidHi:             DRKGRADMID
+ShelfGradMidLow:            DRKGRADMID
+ShelfGradLow:               DRKGRADLOW
 
 // This does not appear to be used
-ShelfBG:                EMPTY
+ShelfBG:                    EMPTY
 
-ShelfEmptyBG:           EMPTY
-ShelfTabActiveHi:       DRKGRADHIGH
-ShelfTabActiveLow:      DRKGRADHIGH
-ShelfTabInactiveHi:     DRKBASE
-ShelfTabInactiveLow:    DRKBASE
+ShelfEmptyBG:               EMPTY
+ShelfTabActiveHi:           DRKGRADHIGH
+ShelfTabActiveLow:          DRKGRADHIGH
+ShelfTabInactiveHi:         DRKBASE
+ShelfTabInactiveLow:        DRKBASE
 
-PaneTabActiveHi:        DRKGRADHIGH
-PaneTabActiveLow:       DRKGRADHIGH
-PaneTabInactiveHi:      DRKBASE
-PaneTabInactiveLow:     DRKBASE
-PaneTabEdges:           GREY(0.15)
-PaneEmptyBG:            EMPTY
-PaneBorder:             GREY(0.15)
-PaneHeaderGradHi:       DRKGRADHIGH
-PaneHeaderGradLow:      DRKGRADLOW
-PaneTabShadow:          GREY(0.075)
-PaneTabMarker:          SELECTION_BASE
+PaneTabActiveHi:            DRKGRADHIGH
+PaneTabActiveLow:           DRKGRADHIGH
+PaneTabInactiveHi:          DRKBASE
+PaneTabInactiveLow:         DRKBASE
+PaneTabEdges:               GREY(0.15)
+PaneEmptyBG:                EMPTY
+PaneBorder:                 GREY(0.15)
+PaneHeaderGradHi:           DRKGRADHIGH
+PaneHeaderGradLow:          DRKGRADLOW
+PaneTabShadow:              GREY(0.075)
+PaneTabMarker:              SELECTION_BASE
 
 PathGadgetArrow1:           GREY(0.1)
 PathGadgetArrow2:           GREY(0.2)
@@ -571,17 +571,17 @@ NetworkWireTimeDepNormal:           0.0 1.0 0.0
 NetworkWireLoopBack:                HSV 180 1.0 1.0 1.0
 NetworkWirePassThrough:             HSV 180 1.0 1.0 1.0
 
-StatusBarMessageFG: TEXT
-StatusBarMessageBG: GREY(0.1)
+StatusBarMessageFG:                 TEXT
+StatusBarMessageBG:                 GREY(0.1)
 //
-StatusBarPromptFG:  TEXT
-StatusBarPromptBG:  HSV 40 0.6 0.6
+StatusBarPromptFG:                  TEXT
+StatusBarPromptBG:                  HSV 40 0.6 0.6
 //
-StatusBarWarningFG: TEXT
-StatusBarWarningBG: HSV 0 0.6 0.5
+StatusBarWarningFG:                 TEXT
+StatusBarWarningBG:                 HSV 0 0.6 0.5
 //
-StatusBarErrorFG:   TEXT
-StatusBarErrorBG:   HSV 0 1 1
+StatusBarErrorFG:                   TEXT
+StatusBarErrorBG:                   HSV 0 1 1
 
 DopeSheetCurrentFrameFG:            WHITE
 DopeSheetCurrentFrameBG:            BLACK
@@ -643,13 +643,13 @@ DopeSheetSpreadSheetDisabled:       0.07 0 0
 DopeSheetRippleTool:                1 1 0
 
 // Default Colors for Playbar Bookmarks
-Bookmark1:  0.11 0.62 0.47
-Bookmark2:  0.85 0.37 0.10
-Bookmark3:  0.46 0.44 0.70
-Bookmark4:  0.91 0.16 0.54
-Bookmark5:  0.40 0.65 0.12
-Bookmark6:  0.90 0.67 0.10
-Bookmark7:  0.65 0.46 0.11
+Bookmark1:                      0.11 0.62 0.47
+Bookmark2:                      0.85 0.37 0.10
+Bookmark3:                      0.46 0.44 0.70
+Bookmark4:                      0.91 0.16 0.54
+Bookmark5:                      0.40 0.65 0.12
+Bookmark6:                      0.90 0.67 0.10
+Bookmark7:                      0.65 0.46 0.11
 
 BorderLight:                    BLACK
 BorderDark:                     DRKBORDER
@@ -689,10 +689,10 @@ RootColor:          HSV 0 0 1
 //
 // These colors for for graphical elements in the Channel Editor
 //
-ChannelEditorBackground:        0.00 0.00 0.00      // Background of the graph
-ChannelEditorBGOutsideGlobal:   GREY(0.1)           // Background of the graph outside the global time range
+ChannelEditorBackground:            0.00 0.00 0.00      // Background of the graph
+ChannelEditorBGOutsideGlobal:       GREY(0.1)           // Background of the graph outside the global time range
 
-ChannelEditorBGOutsidePlayback: 0.093 0.086 0.051   // Background of the graph outside the playback range
+ChannelEditorBGOutsidePlayback:     0.093 0.086 0.051   // Background of the graph outside the playback range
 
 ChannelEditorTimebar:               1.00 1.00 1.00  // Color of timebar to be xored on top
 ChannelEditorGridLine:              0.20 0.20 0.20  // Graph grid line
@@ -732,27 +732,27 @@ ChopEditorTimeBar:                  0.00 0.00 0.00
 // point1/tx and point1/vx will be both be reds of different hues, which in turn
 // will also differ from point2/tx and point2/vx.
 //
-ChannelColorRed1:   #f87171  // Red400
-ChannelColorRed2:   #fb7185  // Rose400
-ChannelColorRed3:   #f472b6  // Pink400
-ChannelColorRed4:   #dc2626  // Red600
-ChannelColorRed5:   #e11d48  // Rose600
-ChannelColorGreen1: #4ade80  // Green400
-ChannelColorGreen2: #a3e635  // Lime400
-ChannelColorGreen3: #34d399  // Emerald400
-ChannelColorGreen4: #2dd4bf  // Teal400
-ChannelColorGreen5: #16a34a  // Green600
-ChannelColorBlue1:  #60a5fa  // Blue400
-ChannelColorBlue2:  #38bdf8  // Sky400
-ChannelColorBlue3:  #22d3ee  // Cyan400
-ChannelColorBlue4:  #2563eb  // Blue600
-ChannelColorBlue5:  #0284c7  // Sky600
-ChannelColorOther1: #fbbf24  // Amber400
-ChannelColorOther2: #2dd4bf  // Teal400
-ChannelColorOther3: #e879f9  // Fuchsia400
-ChannelColorOther4: #fb923c  // Orange400
-ChannelColorOther5: #0d9488  // Teal600
-ChannelColorOther6: #c084fc  // Purple400
+ChannelColorRed1:           #f87171  // Red400
+ChannelColorRed2:           #fb7185  // Rose400
+ChannelColorRed3:           #f472b6  // Pink400
+ChannelColorRed4:           #dc2626  // Red600
+ChannelColorRed5:           #e11d48  // Rose600
+ChannelColorGreen1:         #4ade80  // Green400
+ChannelColorGreen2:         #a3e635  // Lime400
+ChannelColorGreen3:         #34d399  // Emerald400
+ChannelColorGreen4:         #2dd4bf  // Teal400
+ChannelColorGreen5:         #16a34a  // Green600
+ChannelColorBlue1:          #60a5fa  // Blue400
+ChannelColorBlue2:          #38bdf8  // Sky400
+ChannelColorBlue3:          #22d3ee  // Cyan400
+ChannelColorBlue4:          #2563eb  // Blue600
+ChannelColorBlue5:          #0284c7  // Sky600
+ChannelColorOther1:         #fbbf24  // Amber400
+ChannelColorOther2:         #2dd4bf  // Teal400
+ChannelColorOther3:         #e879f9  // Fuchsia400
+ChannelColorOther4:         #fb923c  // Orange400
+ChannelColorOther5:         #0d9488  // Teal600
+ChannelColorOther6:         #c084fc  // Purple400
 
 // Geometry group colors ---------------------------------------------------
 //
@@ -818,8 +818,8 @@ DisabledTextDropShadowColor:    GREY(0.8)
 PopupHelpBackgroundColor:       SELECTION_HIGHLIGHT2
 
 // New colors for Popup windows (Ex. Anonymous Usage Stats Window)
-PopupWindowTextColor:   white
-BlueTextLinkColor:      #FF00FF
+PopupWindowTextColor:       white
+BlueTextLinkColor:          #FF00FF
 
 // Note:    the luminance levels of most of these colors should be similar
 // so that none of them stands out too much and so that the text
@@ -1071,36 +1071,36 @@ ShadedPickFill:         0.2 0.2 0.2
 
 // Hotkey Editor keyboard --------------------------------------------
 
-KeyCapUnavailableFill:  #323232
-KeyCapUnavailableHover: #424242
+KeyCapUnavailableFill:          #323232
+KeyCapUnavailableHover:         #424242
 
-KeyCapAssignedFill:     #515151
-KeyCapAssignedHover:    #616161
+KeyCapAssignedFill:             #515151
+KeyCapAssignedHover:            #616161
 
-KeyCapDefaultFill:      #858585
-KeyCapDefaultHover:     #959595
+KeyCapDefaultFill:              #858585
+KeyCapDefaultHover:             #959595
 
-ModifierKeyOffFill:     #292929
-ModifierKeyOffHover:    #393939
+ModifierKeyOffFill:             #292929
+ModifierKeyOffHover:            #393939
 
-KeyCapSelectionBorder:  WHITE
-KeyCapSelectionText:    WHITE
+KeyCapSelectionBorder:          WHITE
+KeyCapSelectionText:            WHITE
 
-ShiftKeyBorder:         #7F5050
-ShiftKeyFill:           #AF7070
-ShiftKeyHilite:         #CF9090
+ShiftKeyBorder:                 #7F5050
+ShiftKeyFill:                   #AF7070
+ShiftKeyHilite:                 #CF9090
 
-CtrlKeyBorder:          #436892
-CtrlKeyFill:            #5883B4
-CtrlKeyHilite:          #78A3D4
+CtrlKeyBorder:                  #436892
+CtrlKeyFill:                    #5883B4
+CtrlKeyHilite:                  #78A3D4
 
-AltKeyBorder:           #658245
-AltKeyFill:             #8EA37D
-AltKeyHilite:           #AEC39D
+AltKeyBorder:                   #658245
+AltKeyFill:                     #8EA37D
+AltKeyHilite:                   #AEC39D
 
-CmdKeyBorder:           #9A7B49
-CmdKeyFill:             #BBAB28
-CmdKeyHilite:           #DBCB48
+CmdKeyBorder:                   #9A7B49
+CmdKeyFill:                     #BBAB28
+CmdKeyHilite:                   #DBCB48
 
 // Scene Graph Panes --------------------------------------------
 
