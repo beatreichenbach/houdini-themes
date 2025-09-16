@@ -1,0 +1,93 @@
+// Fonts
+#define PROP            Fixed // Usually "Proportional"
+#define FIXED           Fixed
+#define BLACK           Black
+
+// Font sizes
+#define MEGAHUGE        17
+#define HUGE            13
+#define LARGE           11
+#define MEDIUM          10
+#define MEDIUM_SMALL    9
+#define SMALL           8
+#define TINY            7
+
+// <font name> [<bold|italic|bold-italic>] <size>
+
+DefaultFont:                        PROP                MEDIUM
+HelpCardFont:                       PROP                MEDIUM
+InfoCardFont:                       FIXED               MEDIUM
+PaperFont:                          PROP                SMALL
+NotifierFont:                       PROP                MEDIUM
+NotifierHeadingFont:                PROP                Bold MEDIUM
+OpListFont:                         PROP                MEDIUM
+OpListTitleFont:                    PROP                MEDIUM
+VopInOutLabelFont:                  PROP                SMALL
+SpreadsheetFont:                    FIXED               MEDIUM
+SpreadsheetTitleFont:               PROP                MEDIUM
+ListFont:                           PROP                MEDIUM
+ListTitleFont:                      PROP                MEDIUM
+ButtonFont:                         PROP                MEDIUM
+LabelFont:                          PROP                MEDIUM
+HeadingFont:                        PROP                Bold MEDIUM
+HotkeyFont:                         PROP                Italic MEDIUM
+TitleFont:                          PROP                MEGAHUGE
+MenuFont:                           PROP                LARGE
+InputSmallFont:                     FIXED               MEDIUM_SMALL
+InputFont:                          FIXED               MEDIUM
+DopeSheetFont:                      PROP                MEDIUM_SMALL
+DopeSheetLargeFont:                 PROP                LARGE
+OffDefaultParmFont:                 FIXED   Bold        MEDIUM
+CompositorFont:                     PROP                LARGE
+CompositorRulerFont:                PROP                TINY
+CompositorSmallFont:                PROP                MEDIUM
+CompositorSmallerFont:              PROP                SMALL
+CompositorInspectFont:              FIXED               MEDIUM_SMALL
+TreeFont:                           PROP                MEDIUM
+TreeFontBold:                       PROP    Bold        MEDIUM
+TreeFontItalic:                     PROP    Italic      MEDIUM
+TreeFontBoldItalic:                 PROP    Bold-Italic MEDIUM
+PerfMonFont:                        PROP                MEDIUM
+FinePrintFont:                      PROP                TINY
+BoldFont:                           PROP    Bold        MEDIUM
+BoldFontLarge:                      PROP    Bold        LARGE
+TextareaFont                        FIXED               LARGE
+TextportFont                        FIXED               LARGE
+HandleFont                          PROP                SMALL
+GraphFont                           FIXED               MEDIUM
+LadderFont                          PROP                MEDIUM
+NetworkFont:                        PROP                MEDIUM
+PaneTabFont:                        PROP                MEDIUM_SMALL
+PaneTabNetFont:                     PROP    Italic      MEDIUM_SMALL
+PaneTabPinnedFont:                  PROP    Bold        MEDIUM_SMALL
+ShelfTabFont:                       PROP                SMALL
+ShelfItemFont:                      PROP                SMALL
+ShelfItemTinyFont:                  PROP                TINY
+ShelfTextItemFont:                  PROP                MEDIUM
+PathGadgetFont:                     PROP                MEDIUM
+StateLabelFont:                     PROP    Bold        MEDIUM
+ViewportFont:                       PROP                MEDIUM
+WorksheetLabelFont:                 Black               16
+WorksheetPerfMonLabelFont:          Black               12
+ViewportTimeFont:                   Black               20
+ViewportInfoFont:                   FIXED               MEDIUM
+ViewportInspectFont:                FIXED               MEDIUM_SMALL
+ABrowserModeFont:                   PROP                MEDIUM
+ABrowserLargeModeFont:              PROP                HUGE
+ABrowserMedHeaderFont:              PROP    Bold        12
+ABrowserVersionHeaderFont:          PROP    Bold        10
+ABrowserTooltipCategoryFont3:       PROP    Bold        7
+ABrowserTooltipCategoryFont4:       PROP    Bold        5
+ABrowserModeCategoryFont3:          PROP    Bold        8
+ABrowserModeCategoryFont4:          PROP    Bold        6
+ABrowserLargeModeCategoryFont3:     PROP    Bold        20
+ABrowserLargeModeCategoryFont4:     PROP    Bold        15
+OrboltSplashscreenFont:             PROP    Bold        10
+ViewerFlashMessageFont:             NetworkFont
+ViewerFlashMessageFontHeight:       0.3
+AnimBarLabelFont:                   PROP                SMALL
+LeverSliderValueFont:               FIXED               MEDIUM_SMALL
+LeverSliderThumbFont:               PROP                TINY
+
+// Volume of audio alerts
+AudioVolume:                        0.75

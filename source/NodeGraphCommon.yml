@@ -219,10 +219,10 @@ GraphPdgSummaryTextSize:                0.45
 GraphTaskGraphWorkItemsSpacing:         4
 GraphTaskGraphMaxWires:                 10
 
-NodePopupBG:                            #292B35
-NodePopupBasicBG:                       #1F212B
-NodePopupListBG:                        #1F212B
-NodePopupNeedsRefreshBG:                #36373B
+NodePopupBG:                            BASE
+NodePopupBasicBG:                       CRUST
+NodePopupListBG:                        CRUST
+NodePopupNeedsRefreshBG:                SURFACE0
 
-TaskPopupBG:                            #293535
-TaskPopupBasicBG:                       #1F2B2B
+TaskPopupBG:                            BASE
+TaskPopupBasicBG:                       CRUST

@@ -4,103 +4,120 @@ import dataclasses
 import json
 import logging
 import os
+import sys
 
-from PySide6 import QtGui, QtWidgets
+from jinja2 import Environment, FileSystemLoader
 
 logger = logging.getLogger()
 
 
 @dataclasses.dataclass
 class Theme:
-    primary: QtGui.QColor | None = None
-    secondary: QtGui.QColor | None = None
+    primary: str
+    secondary: str
 
-    magenta: QtGui.QColor | None = None
-    red: QtGui.QColor | None = None
-    orange: QtGui.QColor | None = None
-    yellow: QtGui.QColor | None = None
-    green: QtGui.QColor | None = None
-    cyan: QtGui.QColor | None = None
-    blue: QtGui.QColor | None = None
+    magenta: str
+    red: str
+    orange: str
+    yellow: str
+    green: str
+    cyan: str
+    blue: str
 
-    text: QtGui.QColor | None = None
-    subtext1: QtGui.QColor | None = None
-    subtext0: QtGui.QColor | None = None
-    overlay2: QtGui.QColor | None = None
-    overlay1: QtGui.QColor | None = None
-    overlay0: QtGui.QColor | None = None
-    surface2: QtGui.QColor | None = None
-    surface1: QtGui.QColor | None = None
-    surface0: QtGui.QColor | None = None
-    base: QtGui.QColor | None = None
-    mantle: QtGui.QColor | None = None
-    crust: QtGui.QColor | None = None
-
-    def is_dark_theme(self) -> bool:
-        return self.text.value() > self.base.value()
+    text: str
+    subtext1: str
+    subtext0: str
+    overlay2: str
+    overlay1: str
+    overlay0: str
+    surface2: str
+    surface1: str
+    surface0: str
+    base: str
+    mantle: str
+    crust: str
 
 
-def _load(path: str) -> Theme:
+def mix(color1: str, color2: str, weight: float) -> str:
+    values1 = color1.replace('#', '')
+    values2 = color2.replace('#', '')
+    rgb1 = tuple(int(values1[i:i+2], 16) for i in (0, 2, 4))
+    rgb2 = tuple(int(values2[i:i+2], 16) for i in (0, 2, 4))
+    mixed_rgb = tuple(
+        int((1 - weight) * c1 + weight * c2) for c1, c2 in zip(rgb1, rgb2)
+    )
+    mixed_color = '#{:02X}{:02X}{:02X}'.format(*mixed_rgb)
+    return mixed_color
+
+
+def load_theme(path: str) -> Theme:
     """
     Return the theme from `path`.
 
     :raises FileNotFoundError: If the theme cannot be found.
     :raises TypeError: If the theme has unexpected data.
-    :raises JSONDecodeError: If the theme is invalid json.
+    :raises JSONDecodeError: If the theme is invalid JSON.
     """
 
     with open(str(path)) as f:
         data = json.load(f)
-    colors = {key: QtGui.QColor(value) for key, value in data.items()}
-    return Theme(**colors)
+    theme = Theme(**data)
+    return theme
 
 
-def create_color_theme(name: str, output: str) -> None:
-    """"""
+def create_config(theme_path: str, output: str) -> None:
+    """Create a ColorScheme Config from a theme."""
 
+    logger.debug(f'Loading theme: {theme_path}')
+    theme = load_theme(theme_path)
+
+    name, ext = os.path.splitext(os.path.basename(theme_path))
+    data = {k: v.upper() for k, v in dataclasses.asdict(theme).items()}
+    data['name'] = name
+    data['mix'] = mix
+    data['gradient'] = False
+
+    # Render template
     root = os.path.dirname(__file__)
+    source_dir = os.path.join(root, 'source')
+    env = Environment(loader=FileSystemLoader(source_dir))
+    template = env.get_template('UIDark.yml')
+    result = template.render(**data)
 
-    theme_path = os.path.join(root, 'themes', f'{name}.json')
-    theme = _load(theme_path)
-
+    # Write config
     if not os.path.exists(output):
         os.makedirs(output)
-
-    config_dir = os.path.join(root, 'config')
-    if theme.is_dark_theme():
-        ui_file_source = os.path.join(config_dir, 'UIDark.hcs')
-        node_graph_source = os.path.join(config_dir, 'NodeGraphDark.inc')
-    else:
-        ui_file_source = os.path.join(config_dir, 'UILight.hcs')
-        node_graph_source = os.path.join(config_dir, 'NodeGraphLight.inc')
-    basic_colors_source = os.path.join(config_dir, 'basic_colors.inc')
-    node_graph_common_source = os.path.join(config_dir, 'NodeGraphCommon.inc')
-
-    ui_file_dest = os.path.join(output, f'{name}.hcs')
-    basic_colors_dest = os.path.join(output, f'{name}_basic_colors.inc')
-    node_graph_dest = os.path.join(output, f'{name}_node_graph.inc')
-    node_graph_common_dest = os.path.join(output, f'{name}_node_graph_common.inc')
-
-    data = dataclasses.asdict(theme)
-    data['name'] = name
-    data['basic_colors'] = os.path.basename(basic_colors_dest)
-    data['node_graph'] = os.path.basename(node_graph_dest)
-    data['node_graph_common'] = os.path.basename(node_graph_common_dest)
-
-    write_file(ui_file_source,  ui_file_dest, data)
-    write_file(basic_colors_source,  basic_colors_dest , data)
-    write_file(node_graph_source,  node_graph_dest, data)
-    write_file(node_graph_common_source,  node_graph_common_dest , data)
-
-
-def write_file(source: str, dest: str, data: dict) -> None:
-    """Write a file by updating the source from the theme."""
-
-    with open(source, 'r') as f:
-        text = f.read()
-
+    dest = os.path.join(output, f'{name}.hcs')
     with open(dest, 'w') as f:
-        f.write(text.format(**data))
+        f.write(result)
+
+    logger.info(f'Created config: {dest}')
 
 
-create_color_theme('one_dark_two', r'D:\files\settings\houdini\houdini21.0\config')
+def create_configs(output_dir: str) -> None:
+    """Create ColorScheme Configs for all themes in this repo."""
+
+    root = os.path.dirname(__file__)
+    themes_dir = os.path.join(root, 'themes')
+
+    for file in os.listdir(themes_dir):
+        theme_path = os.path.join(themes_dir, file)
+        create_config(theme_path, output_dir)
+
+    logger.info('All configs created.')
+
+
+def main() -> None:
+    logging.basicConfig(level=logging.INFO)
+
+    if len(sys.argv) > 1:
+        output_dir = os.path.expandvars(os.path.expanduser(sys.argv[1]))
+        output_dir = os.path.normpath(output_dir)
+    else:
+        output_dir = os.path.join(os.path.dirname(__file__), 'config')
+
+    create_configs(output_dir)
+
+
+if __name__ == '__main__':
+    main()
