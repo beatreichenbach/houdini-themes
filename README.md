@@ -5,10 +5,12 @@ color scheme configs from theme JSON files.
 
 ## Installation
 
-To install copy the configs from the `config` directory to the config directory
-in the Houdini Preferences location: `~\houdini\houdini21.0\config`
+Download the latest [release](https://github.com/beatreichenbach/houdini-themes/releases).
 
-To set a monospace font, copy `source/resources` to that same location.
+To install copy the configs from the `config` directory to the config directory
+in the Houdini Preferences location: `~\houdini\houdini21.0\config`.
+
+To set a monospace font, copy the `resources` file to the same `config` directory.
 
 ## Previews
 
