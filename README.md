@@ -105,7 +105,7 @@ python -m pip install -r requirements.txt
 
 Install dependencies (Linux):
 ```shell
-. venv\bin\activate
+. venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
@@ -116,7 +116,7 @@ python theme.py
 
 Create configs directly to the houdini directory:
 ```shell
-python theme.py "~\houdini\houdini21.0\config"
+python theme.py "~/houdini21.0/config"
 ```
 
 ## License
