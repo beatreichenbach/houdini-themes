@@ -119,6 +119,10 @@ Create configs directly to the houdini directory:
 python theme.py "~/houdini21.0/config"
 ```
 
+### Color Blending
+
+You can use [ColorKit](https://colorkit.io/) to create gradients between colors.
+
 ## License
 
 MIT License. Copyright 2024 - Beat Reichenbach.
