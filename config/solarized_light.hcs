@@ -1,0 +1,1604 @@
+Scheme: soalrized_light
+
+// Palette
+#define GREY(g)         g g g
+#define BLACK           GREY(0)
+#define WHITE           GREY(1)
+#define UNK             1 0 1
+
+#define PRIMARY         #268BD2
+#define SECONDARY       #B58900
+
+#define MAGENTA         #D33682
+#define RED             #DC322F
+#define ORANGE          #CB4B16
+#define YELLOW          #B58900
+#define GREEN           #859900
+#define CYAN            #2AA198
+#define BLUE            #268BD2
+
+#define TEXT            #586E75
+#define SUBTEXT1        #657B83
+#define SUBTEXT0        #839496
+#define OVERLAY2        #93A1A1
+#define OVERLAY1        #93A1A1
+#define OVERLAY0        #A1A1A1
+#define SURFACE2        #EEE8D5
+#define SURFACE1        #FDF6E3
+#define SURFACE0        #FDF6E3
+#define BASE            #FDF6E3
+#define MANTLE          #EEE8D5
+#define CRUST           #93A1A1
+
+// Include
+CanvasPromptFont:                       NetworkFont
+CanvasPromptFontSize:                   0.2
+CanvasMinGridSpacing:                   0.2
+CanvasGridPointSize:                    0.03
+CanvasFlashMessageFont:                 NetworkFont
+CanvasFlashMessageFontSize:             0.3
+
+PaletteMarginInches:                    0.02
+ColorPaletteCellMarginInches:           0.01
+ShapePaletteCellMarginInches:           0.04
+
+BackgroundImageMaxControlSizeInches:    0.2
+BackgroundImageControlSize:             1.0
+BackgroundImageControlHMargin:          0.2
+BackgroundImageControlVMargin:          0.3
+
+GraphOverlayTextHMarginInches:          0.1
+GraphOverlayTextVMarginInches:          0.05
+GraphOverlayTextAlpha:                  0.15
+GraphOverlayLeftFont:                   NetworkFont
+GraphOverlayLeftFontSizeInches:         0.25
+GraphOverlayCenterFont:                 NetworkFont
+GraphOverlayCenterFontSizeInches:       0.25
+GraphOverlayRightFont:                  BoldFont
+GraphOverlayRightFontSizeInches:        0.3
+
+GraphFootprintMinRadiusInches:          0.3
+GraphFootprintMinOverviewRadiusInches:  0.1
+GraphFootprintSizeScale:                1.1
+GraphFootprint0Thickness:               1.0
+GraphFootprint1Thickness:               0.3
+GraphFootprint2Thickness:               0.11
+GraphFootprint3Thickness:               0.0036
+
+GraphDependencyExternalHeight:          0.10
+GraphDependencyExternalWidth:           0.07
+GraphDependencyExternalHOffset:         0.00
+GraphDependencyExternalVOffset:         0.05
+GraphDependencyCountMargin:             0.005
+GraphDependencyCountFont:               NetworkFont
+GraphDependencyCountSize:               0.14
+
+GraphPreSelectionAlpha:                 0.8
+GraphLayerColorAlpha:                   0.3
+GraphLayerColorWireWidth:               0.24
+GraphLayerColorOutlineDist:             0.17
+
+GraphItemNameFont:                      NetworkFont
+GraphItemNameSize:                      0.225
+GraphItemDescriptionFont:               NetworkFont
+GraphItemDescriptionSize:               0.2
+GraphCommentMaxWidth:                   5.0
+GraphDescriptiveNameMaxWidth:           0.0
+GraphContextOptionDepsMaxWidth:         5.0
+GraphLopLastModifiedPrimMaxWidth:       0.0
+GraphTagsMaxWidth:                      5.0
+
+GraphFlyoutBackgroundBlendFlagOn:       0.78
+GraphFlyoutBackgroundBlendFlagOff:      0.95
+GraphFlyoutOuterRadius:                 0.9
+GraphFlyoutInnerRadiusScale:            0.7
+GraphFlyoutFlagIndicatorScale:          0.1
+GraphFlyoutFlagIconScale:               0.3
+GraphMinFlyoutOuterRadiusInches:        0.45
+GraphMinFlyoutInnerRadiusInches:        0.2
+GraphFlyoutRegionAlpha:                 0.8
+GraphFlyoutNonInteractiveAlpha:         0.4
+
+GraphDotRadius:                         0.09
+GraphDotPinInnerFraction:               0.35
+GraphDotPinOuterFraction:               0.65
+GraphMaxDotRadiusInches:                0.1
+GraphWireStubLength:                    0.20
+GraphWireStubRadius:                    0.035
+GraphWireStubSelectedBorder:            0.02
+GraphWireArrowLength:                   0.15
+GraphWireArrowAspectRatio:              0.5
+GraphWireMinArrowLengthInches:          0.05
+GraphWireMaxArrowLengthInches:          0.6
+GraphWireLongFadedAlpha:                0.6
+GraphWireLongerFadedAlpha:              0.1
+GraphWireLongFadeLength:                5.0
+GraphWireLongerFadeLength:              10.0
+GraphWireMinCurveRadius:                0.15
+GraphWireMaxCurveRadius:                0.3
+GraphWireRoundedCurveRadius:            0.3
+GraphWireParmVopStubWidth:              0.2
+GraphWireParmVopStubHeight:             0.1
+GraphWireNodeSelectionBlend:            0.4
+
+GraphMinConnectorSpace:                 0.03
+GraphConnectorRadius:                   0.045
+GraphConnectorPickRadius:               0.15
+GraphConnectorLabelOffset:              0.08
+GraphConnectorIndicatorSize:            0.045
+GraphItemCornerRadius:                  0.1
+GraphBorderWidth:                       2
+GraphHighDPIBorderWidth:                3
+GraphOverviewBorderWidth:               2
+GraphHighDPIOverviewBorderWidth:        3
+
+GraphCop2PreviewMaxSize:                128
+GraphCop2PreviewMinAspect:              1.0
+GraphCop2PreviewMaxAspect:              5.0
+GraphCop2BottomBarHeight:               0.15
+GraphCop2BottomBarMarginLeft:           0.1
+GraphCop2BottomBarMarginRight:          0.1
+GraphCop2BottomButtonSize:              0.1
+GraphCop2PlaneNameFont:                 InputFont
+
+GraphVopPreviewHeight:                  1.0
+GraphVopConnectorHeight:                0.15
+GraphVopConnectorFontHeight:            0.12
+GraphVopConnectorDotScale:              0.25
+GraphVopConnectorNameIndent:            0.1
+GraphVopConnectorNameFont:              NetworkFont
+GraphVopBottomBarHeight:                0.15
+GraphVopBottomBarMarginLeft:            0.1
+GraphVopBottomBarMarginRight:           0.1
+GraphVopBottomButtonSize:               0.1
+GraphVopBottomButtonSpacing:            0.1
+GraphVopGroupExpanderWidth:             0.05
+GraphVopGroupExpanderHeight:            0.08
+GraphVopTopSpacing:                     0.03
+GraphVopBottomSpacing:                  0.05
+GraphVopGroupSpacing:                   0.08
+GraphVopFlyoutVerticalShift:            -0.1
+
+GraphShopConnectorHeight:               0.15
+GraphShopConnectorFontHeight:           0.12
+GraphShopConnectorDotScale:             0.25
+GraphShopConnectorNameIndent:           0.08
+GraphShopConnectorNameFont:             NetworkFont
+GraphShopTopSpacing:                    0.03
+GraphShopBottomSpacing:                 0.05
+GraphShopFlyoutVerticalShift:           -0.1
+
+GraphSubnetShadowOffset:                0.0275
+GraphBypassColorBlend:                  0.9
+GraphBypassNameColorBlend:              0.7
+GraphBypassConnectorColorBlend:         0.7
+GraphBypassBorderColorBlend:            0.35
+GraphBypassIconAlpha:                   0.4
+GraphBypassBadgeAlpha:                  0.4
+
+GraphOutsideCookSetColorBlend:          0.6
+GraphOutsideCookSetNameColorBlend:      0.3
+GraphOutsideCookSetConnectorColorBlend: 0.5
+
+GraphNameHSpacing:                      0.1
+GraphNameVSpacing:                      0.06
+GraphBadgeSize:                         0.16
+GraphBadgeDotRadius:                    0.06
+GraphBadgeHIndent:                      0.03
+GraphBadgeHSpacing:                     0.22
+GraphBadgeVSpacingBelow:                -0.04
+GraphBadgeVSpacingAbove:                0.04
+GraphNodeTypeVSpacingAbove:             0.11
+GraphDescriptionVSpacingBelow:          -0.17
+GraphDescriptionVSpacingBelowNoBadges:  -0.04
+GraphDescriptionVSpacingAbove:          0.38
+GraphDescriptionVSpacingAboveNoBadges:  0.04
+GraphDescriptionWidth:                  3.0
+GraphDescriptionLines:                  3
+
+GraphLargeBadgeMinSizeInches:           0.3
+GraphLargeBadgeOverviewMinSizeInches:   0.15
+GraphLargeBadgeSize:                    1.0
+GraphLargeBadgeLeftShift:               -0.2
+GraphLargeBadgeTopShift:                0.0
+GraphLargeBadgeStackLeftShift:          -0.5
+GraphLargeBadgeStackTopShift:           0.0
+
+GraphHullOffset:                        0.15
+GraphHullNestedOffset:                  0.05
+GraphHullAlpha:                         0.1
+
+GraphPerfGlowMaxSize:                   0.5
+GraphPerfGlowMaxSizeInches:             0.4
+GraphPerfGlowMinSizeInches:             0.1
+GraphPerfGlowMaxOverviewSizeInches:     0.2
+GraphPerfGlowMinOverviewSizeInches:     0.1
+
+GraphNetworkBoxOffset:                  0.15
+GraphNetworkBoxSpaceForNames:           1.0
+GraphNetworkBoxMinWidth:                2.5
+GraphNetworkBoxTitleHeight:             0.3
+GraphNetworkBoxTitleIndent:             0.05
+GraphNetworkBoxMinMaxSize:              0.25
+GraphNetworkBoxMinMaxIndent:            0.05
+GraphNetworkBoxAlpha:                   0.5
+GraphNetworkBoxTitleAlpha:              0.8
+GraphNetworkBoxTitleFont:               NetworkFont
+GraphNetworkBoxTitleSize:               0.225
+GraphNetworkBoxEscapeVel:               5.0
+
+GraphStickyNoteMinWidth:                2.5
+GraphStickyNoteTitleHeight:             0.225
+GraphStickyNoteTitleIndent:             0.05
+GraphStickyNoteTextHMargin:             0.05
+GraphStickyNoteTextVMargin:             0.05
+GraphStickyNoteMinMaxSize:              0.25
+GraphStickyNoteMinMaxIndent:            0.05
+GraphStickyNoteAlpha:                   0.7
+GraphStickyNoteTitleAlpha:              0.9
+GraphStickyNoteFont:                    NetworkFont
+GraphStickyNoteSize:                    0.225
+GraphStickyNoteTitleFont:               NetworkFont
+GraphStickyNoteTitleSize:               0.225
+
+GraphPdgProgressMaxRadius:              0.2
+GraphPdgProgressMinRadius:              0.1
+GraphPdgProgressRadiusRatio:            0.8
+GraphPdgProgressDefaultRadius:          0.2
+
+GraphPdgSummarySizeRatio:               2.0
+GraphPdgSummaryTextSize:                0.45
+
+GraphTaskGraphWorkItemsSpacing:         4
+GraphTaskGraphMaxWires:                 10
+
+NodePopupBG:                            BASE
+NodePopupBasicBG:                       CRUST
+NodePopupListBG:                        CRUST
+NodePopupNeedsRefreshBG:                SURFACE0
+
+TaskPopupBG:                            BASE
+TaskPopupBasicBG:                       CRUST
+
+PaletteBackground:                  CRUST
+PaletteSelected:                    YELLOW
+ShapePaletteShape:                  SUBTEXT1
+
+BackgroundImageLocate:              WHITE
+BackgroundImageBorder:              YELLOW
+BackgroundImageBrightness:          YELLOW
+BackgroundImageLink:                SUBTEXT1
+
+GraphOverlayLeftText:               0.2 0.9 0.9
+GraphOverlayCenterText:             0.7 0.7 0.7
+GraphOverlayRightText:              WHITE
+
+GraphBackground:                    MANTLE
+GraphOverviewBackground:            CRUST
+GraphOverviewViewRegion:            0.5 0.3 0.5
+GraphOverviewBorder:                BLACK
+GraphPromptText:                    SUBTEXT1
+GraphGridLines:                     SURFACE0
+GraphGridPoints:                    SURFACE2
+
+GraphNameText:                      SUBTEXT1
+GraphNodeTypeText:                  SURFACE2
+GraphCommentText:                   CYAN
+GraphDescriptiveNameText:           BLUE
+GraphContextOptionDepsText:         CYAN
+GraphLopLastModifiedPrimText:       CYAN
+GraphLopLayerCountText:             CYAN
+GraphOutputForViewText:             CYAN
+GraphDetailIdText:                  CYAN
+GraphNetworkBoxText:                WHITE
+GraphNetworkBoxTextDark:            BLACK
+GraphNetworkBoxNameText:            BLUE
+GraphIndirectText:                  WHITE
+GraphIndirectTextDark:              BLACK
+GraphTagsText:                      CYAN
+
+GraphItemBorder:                    BLACK
+GraphMinimizeButton:                SUBTEXT1
+
+GraphTemplateFlag:                  #DD7DD7
+GraphSelectableTemplateFlag:        #B151BB
+GraphBypassFlag:                    YELLOW
+GraphRenderFlag:                    #A779FF
+GraphDisplayFlag:                   BLUE
+GraphOutputFlag:                    0.75    0.4     0.0
+GraphSelectableFlag:                #ABEA21
+GraphExportFlag:                    ORANGE
+GraphHiddenFlag:                    OVERLAY2
+GraphAudioFlag:                     0.0     0.5     0.5
+GraphThumbnailFlag:                 0.35    0.6     0.2
+GraphLockFlag:                      RED
+GraphSoftLockFlag:                  #9D9100
+GraphDebugFlag:                     GREEN
+GraphMaterialFlag:                  0.75    0.4     0.0
+GraphDisplayAndRenderFlag:          0.00    0.68    0.94
+GraphDisplayAndOutputFlag:          0.75    0.45    0.36
+GraphFilterFlag:                    #55FFC1
+
+GraphDisplayHighlight:              #44679A
+GraphExportHighlight:               #734670
+GraphRenderHighlight:               #9273CB
+GraphOutputHighlight:               #6B5634
+GraphTemplateHighlight:             #734670
+GraphFilterHighlight:               #298966
+
+GraphDopObjectData:                 0.65    0.65    0.65
+GraphDopData:                       0.50    0.80    0.50
+GraphDopRelData:                    0.20    0.60    0.20
+GraphDopSolverData:                 0.7     0.5     0.9
+GraphDopAnyData:                    0.9     0.9     0.9
+GraphSopHeightfield:                #25aa8e
+GraphSopConstraints:                #D879D8
+GraphSopDomain:                     #6bcae2
+GraphSopRestGeometry:               0.584   0.776   1.0
+GraphSopCapturePose:                0.6     0.6     0.6
+GraphSopAnimatedPose:               1.0     0.725   0.0
+GraphSopCharacterStream:            0.559   0.159   1.0
+
+GraphConnector:                     0.7 0.7 0.7
+GraphConnectorLabel:                SUBTEXT0
+GraphConnectorError:                #CE5E5E
+GraphCop2MaskInput:                 0.50 0.80 0.50
+GraphWire:                          #5F91CC
+GraphWireUnused:                    0.4 0.4 0.4
+GraphWireError:                     RED
+GraphWireLoopBack:                  0.3 0.3 1.0
+GraphWireSelection:                 YELLOW
+GraphWireNodeSelection:             YELLOW
+GraphWireLongFaded:                 0.5 0.5 0.5
+GraphWireLongerFaded:               0.5 0.5 0.5
+GraphWireStub:                      SUBTEXT0
+GraphWireStubSelection:             YELLOW
+GraphWireCut:                       RED
+GraphWireCutPath:                   0.95    0.3 0.0
+GraphWireStitchStart:               GREEN
+GraphWireStitchEnd:                 GREEN
+GraphSpareWire:                     #8967D9
+GraphParmOverrideWire:              ORANGE
+
+GraphDependency:                    #9A6955
+GraphDependencyEndAffector:         #668E4A
+GraphDependencyExternalIn:          SUBTEXT1
+GraphDependencyExternalOut:         SUBTEXT1
+
+GraphPickFill:                      0.9     0.9     0.9
+GraphPreSelection:                  0.75    0.86    1.0
+GraphItemCurrent:                   #FFD400
+GraphItemCurrentNonSelected:        #C89C9C
+GraphItemSelection:                 #EEF81C
+GraphItemSelectionContrast:         BLACK
+GraphItemContentsSelection:         #6E780C
+GraphSnapLine:                      #5C704D
+
+GraphFlyoutBackgroundFlagOn:        BLACK
+GraphFlyoutBackgroundFlagOff:       BLACK
+GraphFlyoutEdgeFlagOff:             SURFACE0
+GraphFlyoutInfo:                    CRUST
+GraphFlyoutWarning:                 0.2 0.2 0.0
+GraphFlyoutError:                   0.2 0.0 0.0
+
+GraphDotPinAccent:                  SURFACE0
+
+GraphCop2PreviewBackground:         CRUST
+GraphCop2BottomButtonEnabled:       CRUST
+
+GraphVopConnectorGroupName:         WHITE
+GraphVopConnectorBackground:        SURFACE0
+GraphVopBottomButtonEnabled:        CRUST
+GraphVopBottomButtonDisabled:       OVERLAY1
+
+GraphShopConnectorBackground:       CRUST
+
+GraphSubnetShadow1:                 BLACK
+GraphSubnetShadowBlend1:            0.6
+GraphSubnetShadow2:                 WHITE
+GraphSubnetShadowBlend2:            0.3
+
+GraphErrorBadgeDot:                 1.00    0.00    0.00
+GraphChildErrorBadgeDot:            1.00    0.00    0.00
+GraphWarningBadgeDot:               0.77    0.60    0.04
+GraphMessageBadgeDot:               0.05    0.45    1.00
+GraphCommentBadgeDot:               0.15    0.67    0.64
+GraphNodeLockedBadgeDot:            1.00    0.35    0.43
+GraphNodeUnloadBadgeDot:            0.60    0.65    0.73
+GraphNodeHasDataBadgeDot:           0.45    0.75    0.45
+GraphNeedsCookBadgeDot:             0.97    0.91    0.11
+GraphHdaLockedBadgeDot:             0.43    0.47    0.48
+GraphHdaUnlockedBadgeDot:           0.98    0.49    0.55
+GraphHdaDelaySyncBadgeDot:          0.70    0.70    0.70
+GraphTimeDependentBadgeDot:         0.72    0.91    0.53
+GraphTagsBadgeDot:                  0.15    0.67    0.64
+GraphVexCachedBadgeDot:             #FF5AD2
+GraphVexCachableBadgeDot:           #AA3E8C
+GraphNotCompilableBadgeDot:         #E5B985
+GraphConstraintsBadgeDot:           #97C473
+GraphKinematicsBadgeDot:            #FF9370
+GraphHasTakeDataBadgeDot:           #979797
+GraphNodeUnloadBadgeDot:            #D19F9F
+GraphNodeHasDataBadgeDot:           #9FABD1
+Graph64bitBadgeDot:                 #AC68CC
+GraphContinuousCookBadgeDot:        #FFB43C
+GraphLiveRenderBadgeDot:            #73d216
+GraphPdgDynamicBadgeDot:            #E5C8FF
+GraphUnloadedPayloadsBadgeDot:      #EDC486
+GraphPopulationMaskBadgeDot:        #A06B9A
+GraphDiveableBadgeDot:              #73d216
+GraphLoadFromDiskBadgeDot:          #dceefaff
+GraphPdgMQServerAuthBadgeDot:       #448519
+GraphPdgMQClientsAuthBadgeDot:      #448519
+
+GraphPdgProgressOutline:            WHITE
+GraphPdgProgressPrecook:            #324D59
+GraphPdgProgressCooking:            GREEN
+GraphPdgProgressCooked:             #4D623F
+GraphPdgProgressWarning:            #EBF802
+GraphPdgProgressError:              RED
+GraphPdgProgressIncomplete:         #75876A
+
+GraphPdgProgressErrorCircle:        #D0021B
+GraphPdgProgressErrorFill:          #730000
+GraphPdgProgressNormalFill:         #232323
+
+GraphPdgSummaryBackground:          MANTLE
+GraphPdgSummaryFilterOn:            #FFD42A
+GraphPdgSummaryWorkItemCooked:      #73945D
+GraphPdgSummaryWorkItemCooking:     GREEN
+GraphPdgSummaryWorkItemWaiting:     #879889
+GraphPdgSummaryWorkItemUncooked:    OVERLAY0
+GraphPdgSummaryWorkItemFailed:      #EE5A6C
+GraphPdgSummaryWorkItemCancelled:   #EBB502
+
+GraphTaskGraphBackground:           CRUST
+GraphTaskGraphBorder:               OVERLAY2
+GraphTaskGraphSeeMore:              TEXT
+GraphTaskGraphWorkItemCooked:       #529232
+GraphTaskGraphWorkItemCached:       #529232
+GraphTaskGraphWorkItemCooking:      #ADFF49
+GraphTaskGraphWorkItemWaiting:      #354B60
+GraphTaskGraphWorkItemUncooked:     OVERLAY0
+GraphTaskGraphWorkItemFailed:       RED
+GraphTaskGraphWorkItemCancelled:    #69511B
+GraphTaskGraphWorkItemSelected:     #FFD42A
+GraphTaskGraphWorkItemHovered:      #33EEFF
+GraphTaskGraphWorkItemAncestor:     #99FF79
+GraphTaskGraphWorkItemDescendant:   #2AFFCB
+GraphTaskGraphNormalWire:           TEXT
+GraphTaskGraphMappedWire:           #80FFA2
+GraphTaskGraphIndirectWire:         #D9DD70
+
+GraphTaskGraphWorkItemPerfFast:     #009166
+GraphTaskGraphWorkItemPerfMed:      #f6ff00
+GraphTaskGraphWorkItemPerfSlow:     #ff9000
+GraphTaskGraphWorkItemPerfNA:       SURFACE1
+
+GraphTaskGraphStatusBarFailed:      #FF9C9C
+GraphTaskGraphStatusBarCancelled:   #F7DF1B
+GraphTaskGraphStatusBarCooked:      #529232
+GraphTaskGraphStatusBarCooking:     #B7DF86
+GraphTaskGraphStatusBarWaiting:     OVERLAY1
+GraphTaskGraphStatusBarEmpty:       BASE
+
+GraphTaskGraphLogError:             #D04548
+GraphTaskGraphLogWarning:           #B8B834
+
+GraphTaskPageRect:                  SUBTEXT1
+
+GraphTopBottomButtonEnabled:        CRUST
+GraphTopBottomButtonDisabled:       OVERLAY1
+
+GraphLopLayerOutline:               OVERLAY1
+GraphLopLayerColor1:                GREEN
+GraphLopLayerColor2:                #AF765B
+GraphLopLayerColor3:                RED
+GraphLopLayerColor4:                #B36B91
+GraphLopLayerColor5:                #C35089
+GraphLopLayerColor6:                MAGENTA
+GraphLopLayerColor7:                CYAN
+GraphLopLayerColor8:                #2896B5
+GraphLopLayerColor9:                BLUE
+
+// Variables
+#define DRKGRADHIGH                 BASE
+#define DRKGRADMID                  BASE
+#define DRKGRADLOW                  BASE
+
+#define DARK                        BASE
+#define ARROW                       OVERLAY0
+
+#define PRESSED_HIGH                SURFACE1
+#define PRESSED_LOW                 SURFACE1
+
+#define HELP_BG                     1       1     0.88
+#define HELP_F1_BG                  0.88    0.97    1
+
+#define SELECTION_BASE              #B58900
+#define SELECTION_HIGHLIGHT2        #867B3A
+#define SELECTION_SHADOW            #A49550
+
+#define ERROR                       1       0       0
+
+#define BASE_ALT                    MANTLE
+#define EMPTY                       MANTLE
+
+#define TEXT_HIGHLIGHT              TEXT
+
+#define EDIT_BG                     CRUST
+#define EDIT_BG_HIGHLIGHT           MANTLE
+#define EDIT_BG_OUTLINE             CRUST
+
+#define GRAD_HI                     DRKGRADHIGH
+#define GRAD_LOW                    DRKGRADLOW
+
+#define BUTTON_DISABLE              OVERLAY0
+#define BUTTON_SEL                  SELECTION_BASE
+#define BUTTON_PRESS                SELECTION_BASE
+
+////////////////////////////////////////////////////////////////////////
+
+// Color correction for the icons --------------------------------------------
+
+IconBrightness:                     .9
+IconContrast:                       1
+IconGamma:                          1
+IconSaturation:                     1
+
+// New UI Resources ----------------------------------------------------------
+
+// Watch out when adjusting BackColor.  If white lines appear in the UI, you
+// may need to adjust the BorderDark as CRUST due to automatic contrast code
+// which flips the foreground color from dark to light when the
+// contrast between the foreground and background is too low.
+
+BackColor:                          DRKGRADLOW
+
+ButtonGradHi:                       SURFACE0
+ButtonGradLow:                      SURFACE0
+ButtonNonActiveGradLow:             SURFACE0      // Low end of gradient on non-selected tabs
+
+// These are used for tons of borders all over the place, but
+// NOT for buttons >:-(
+ButtonShadowLight:                  CRUST
+ButtonShadowMed:                    CRUST
+ButtonShadowMedDark:                CRUST
+ButtonShadowDark:                   CRUST
+ButtonShadow:                       CRUST
+
+ToolbarBevelLight:                  CRUST
+ToolbarBevelDark:                   CRUST
+
+ToolbarFlatGradHi:                  MANTLE          // Top/left end of gradient
+ToolbarFlatGradLo:                  MANTLE          // Bottom/right end of gradient
+
+DialogBlendBG:                      MANTLE          // messages, etc
+
+ButtonText:                         TEXT
+ButtonHoverHighlight:               WHITE
+ButtonPressedText:                  WHITE
+ButtonPressedText2:                 CRUST
+ButtonPressedGradHi:                PRESSED_HIGH
+ButtonPressedGradLow:               PRESSED_LOW
+
+ButtonMenuArrowHi:                  BASE
+ButtonMenuArrowLow:                 BASE
+ButtonMenuArrow:                    ARROW
+
+ButtonArrow:                        ARROW
+ButtonArrowDisabled:                DRKGRADLOW
+ButtonArrowPressed:                 BASE
+ButtonArrowModified:                SUBTEXT0
+
+TextColor:                          TEXT
+HiliteTextColor:                    TEXT_HIGHLIGHT
+HiliteTextBG:                       SURFACE1
+SecondaryText:                      OVERLAY0
+LinkText:                           BLUE
+MatchedTextFG:                      SELECTION_BASE
+
+DropIndicator:                      BLUE
+
+MenuBG:                             DRKGRADLOW
+MenuText:                           TEXT
+MenuTextDisabled:                   OVERLAY2
+MenuTextHotkey:                     OVERLAY2
+MenuHighlight:                      MANTLE
+MenuShadow:                         MANTLE
+MenuTextSelected:                   WHITE
+MenuSelectedBG:                     #3B8FC8
+MenuTitleBG:                        MANTLE
+InvertedMenuBackground:             SUBTEXT1
+
+// Colors for Ramp (Float) parameters.
+RampBG:                             MANTLE
+RampFG:                             OVERLAY2
+RampBGDisabled:                     SURFACE0
+RampFGDisabled:                     SURFACE2
+RampGrid:                           SURFACE0
+RampCurve:                          SURFACE2
+RampCurveDisabled:                  OVERLAY2
+RampKeyBG:                          CRUST
+RampKeyFG:                          BUTTON_PRESS
+RampKeyDisabled:                    OVERLAY2
+RampKeyHoverBG:                     SELECTION_HIGHLIGHT2
+RampKeyHoverFG:                     SELECTION_BASE
+RampHandleBG:                       #004a98
+RampHandleFG:                       WHITE
+RampHandleHoverBG:                  #004a98
+RampHandleHoverFG:                  WHITE
+RampHandleLines:                    #004a98
+RampHandleLinesHover:               WHITE
+RampBoxSelect:                      SURFACE0
+RampMarkerHover:                    BUTTON_SEL
+RampConstraintGuide:                BUTTON_SEL
+RampOutOfRangeBG:                   CRUST
+RampOneLine:                        GREY(0.8)
+RampPushingLine:                    YELLOW
+RampRetractingLine:                 GREEN
+RampGrayscaleCurve:                 0.0     0.7     1
+
+// Colors for multiparm parameters.
+MultiParmSelectedBG:                SURFACE0
+MultiParmHoverBG:                   SURFACE0
+MultiParmDragBG:                    SELECTION_BASE
+MultiParmDragLine:                  SELECTION_BASE
+
+Separator:                          SURFACE0
+
+CheckBG:                            EDIT_BG
+CheckLocated:                       BUTTON_SEL
+CheckColor:                         TEXT
+
+RadioBG:                            EDIT_BG
+RadioBorder:                        SUBTEXT0
+RadioDot:                           TEXT
+RadioDotHighlight:                  BUTTON_SEL
+
+TextboxBG:                          EDIT_BG
+TextboxInvalidBG:                   RED
+TextboxBorderPrimary:               EDIT_BG_OUTLINE
+TextboxBorderHighlight:             EDIT_BG_HIGHLIGHT
+TextboxBorderStippled:              OVERLAY0
+TextboxBorderKeyFocus:              SECONDARY
+TextboxError:                       ERROR
+TextboxGutter:                      DARK
+TextboxDropMarker:                  HSV 238 0.40 0.88       // light magenta
+
+TextboxFeedbackFG:                  OVERLAY0
+TextboxFeedbackBG:                  UNK
+SelectedTextFG:                     BLACK
+SelectedTextBG:                     SELECTION_BASE
+SelectedTextDisabledBG:             SURFACE0
+
+SliderTopBorder:                    CRUST
+SliderBottomBorder:                 CRUST
+SliderAdvancedBevel:                CRUST
+SliderAdvancedGroove:               PRIMARY
+SliderRemainingBevel:               CRUST
+SliderRemainingGroove:              CRUST
+SliderTick:                         SURFACE2
+SliderTickLabel:                    OVERLAY1
+SliderRangeBrackets:                BLACK
+
+SliderThumbGradHi:                  OVERLAY0
+SliderThumbGradLow:                 OVERLAY0
+SliderThumbPressedGradHi:           PRESSED_HIGH
+SliderThumbPressedGradLow:          PRESSED_LOW
+SliderThumbTopBorder:               CRUST
+SliderThumbTopBevel:                OVERLAY0
+SliderThumbBottomBevel:             OVERLAY0
+SliderThumbBottomBorder:            CRUST
+SliderThumbRangeArrow:              BLACK
+
+RangeSliderBackground:              EDIT_BG
+RangeSliderRect:                    SURFACE2
+RangeSliderRectLocated:             OVERLAY2
+RangeSliderRectSelected:            WHITE
+RangeSliderArrow:                   OVERLAY2
+RangeSliderArrowLocated:            SUBTEXT1
+RangeSliderArrowSelected:           WHITE
+
+LeverSliderBG:                      CRUST
+LeverSliderTopBevel:                MANTLE
+LeverSliderBottomBevel:             MANTLE
+LeverSliderLeftBevel:               MANTLE
+LeverSliderRightBevel:              MANTLE
+LeverSliderFilledBevelTop:          MANTLE
+LeverSliderFilled:                  SURFACE1
+LeverSliderFilledBevelBottom:       MANTLE
+LeverSliderTick:                    MANTLE
+
+LeverSliderValueText:               SUBTEXT0
+LeverSliderThumbText:               SUBTEXT0
+
+LeverSliderThumbTopBevel:           CRUST
+LeverSliderThumbBottomBevel:        CRUST
+LeverSliderThumbTopBorder:          CRUST
+LeverSliderThumbBottomBorder:       CRUST
+LeverSliderThumbGradBottom:         SURFACE0
+LeverSliderThumbGradTop:            SURFACE0
+LeverSliderThumbRangeArrow:         CRUST
+
+LeverSliderThumbPressedGradBottom:  PRESSED_HIGH
+LeverSliderThumbPressedGradTop:     PRESSED_LOW
+
+
+KeyframeButtonSelectedGradHi:       SURFACE2
+KeyframeButtonSelectedGradLow:      SURFACE2
+KeyframeButtonLocatedGradHi:        SURFACE1
+KeyframeButtonLocatedGradLow:       SURFACE1
+KeyframeButtonGradHi:               SURFACE0
+KeyframeButtonGradLow:              SURFACE0
+KeyframeButtonCircleKey:            #7ED321
+KeyframeButtonCircleSomeKey:        #356600
+KeyframeButtonCircleNoKey:          HSV 180     0.5     0.5
+KeyframeButtonCirclePending:        HSV 39 1 0.9
+KeyframeButtonBorder:               CRUST
+KeyframeButtonCircleFillOpacity:    BASE
+
+LadderBG:                           EDIT_BG
+LadderText:                         TEXT
+LadderHighlight:                    SELECTION_BASE
+LadderOutline:                      OVERLAY0
+LadderShadow:                       UNK
+
+ScrollbarUpperBorder:               MANTLE
+ScrollbarBottomBorder:              MANTLE
+ScrollbarWell:                      CRUST
+ScrollbarWellShadow1:               CRUST
+ScrollbarWellShadow2:               CRUST
+ScrollbarWellShadow3:               CRUST
+ScrollbarWellShadowBlend12:         CRUST
+ScrollbarWellShadowBlend13:         CRUST
+ScrollbarWellShadowBlend22:         CRUST
+ScrollbarWellShadowBlend23:         CRUST
+ScrollbarWellShadowBlend32:         CRUST
+ScrollbarWellShadowBlend33:         CRUST
+
+
+ScrollbarThumbTopBorder:            DRKGRADHIGH
+ScrollbarThumbBottomBorder:         DRKGRADHIGH
+ScrollbarThumbBevel:                MANTLE
+ScrollbarThumbGrippyBase:           BLACK
+ScrollbarThumbGrippyEdge:           BLACK
+
+ScrollbarButtonTopBorder:           CRUST
+ScrollbarButtonBottomBorder:        CRUST
+ScrollbarButtonBetweenBorder:       MANTLE
+ScrollbarButtonBevel:               CRUST
+ScrollbarButtonArrow:               ARROW
+
+ScrollArrow:                        ARROW
+ScrollArrowSelected:                BUTTON_SEL
+ScrollArrowDisabled:                DRKGRADMID
+
+ProgressMeterPercentLabelLeft:      BLACK
+ProgressMeterPercentLabelRight:     WHITE
+ProgressMeterTopBorder:             SURFACE1
+ProgressMeterBottomBorder:          SURFACE1
+ProgressMeterWellGradHi:            CRUST
+ProgressMeterWellGradLo:            CRUST
+ProgressMeterBevelTop:              SELECTION_SHADOW
+ProgressMeterBevelBottom:           SELECTION_SHADOW
+ProgressMeterGradHi:                SELECTION_HIGHLIGHT2
+ProgressMeterGradLo:                SELECTION_BASE
+ProgressMeterText:                  TEXT
+
+ListShadow:                         SURFACE0
+ListHighlight:                      SURFACE1
+ListBorder:                         CRUST
+ListBG:                             BASE_ALT            // clrs bg in download clr scheme window
+ListEntry1:                         BASE
+ListEntry2:                         MANTLE
+ListEntrySelected:                  SELECTION_BASE
+ListTitleShadow:                    CRUST
+ListTitleHighlight:                 ListHighlight
+ListTitleGradHi:                    MANTLE
+ListTitleGradLow:                   MANTLE
+ListTitleHighlightGradHi:           #BF5C31
+ListTitleHighlightGradLow:          #BF5C31
+ListTitleFilteredText:              SELECTION_BASE
+ListText:                           TEXT                // clrs text in download clr scheme window
+ListAltText:                        HSV 40 0.85 1.0
+ListHoverHighlight:                 SURFACE0
+ListItemTextHighlightGlow:          SELECTION_BASE
+ListItemTextAncestorHighlightGlow:  1.0 0.5 0.5
+
+GalleryBackground:                  MANTLE
+SnapshotGalleryBackground:          BLACK
+
+SwitchButtonSelected:               OVERLAY0
+SwitchButtonLocated:                BASE
+
+HotkeyMgrUnboundActionFG:           OVERLAY1
+
+// Divider line between spreadsheet columns
+SSBorder:                           CRUST
+
+// Drag And Drop Outline in spreadsheet.
+SSOutline:                          DropIndicator
+
+// Highlight Color Alpha in the channel lister
+// Red is for the Displayed Channel Alpha
+// Green is for the Graph Selected Channel Alpha.
+SSHighlightAlpha:                   0.25 0.55 0.0
+
+SSHeader:                           SURFACE0
+
+GroupBorder:                        CRUST
+
+GroupHeader0:                       BASE
+GroupHeaderTop0:                    BASE
+GroupHeaderHi0:                     SURFACE1
+GroupHeaderHiTop0:                  SURFACE1
+GroupHeaderOpen0:                   SURFACE1
+GroupHeaderOpenTop0:                SURFACE1
+GroupHeaderDisabled0:               BASE
+GroupHeaderDisabledTop0:            BASE
+GroupBody0:                         SURFACE0
+
+GroupHeader1:                       BASE
+GroupHeaderTop1:                    BASE
+GroupHeaderHi1:                     SURFACE1
+GroupHeaderHiTop1:                  SURFACE1
+GroupHeaderOpen1:                   SURFACE1
+GroupHeaderOpenTop1:                SURFACE1
+GroupHeaderDisabled1:               BASE
+GroupHeaderDisabledTop1:            BASE
+GroupBody1:                         BASE
+
+GroupHeader2:                       BASE
+GroupHeaderTop2:                    BASE
+GroupHeaderHi2:                     SURFACE0
+GroupHeaderHiTop2:                  SURFACE0
+GroupHeaderOpen2:                   SURFACE1
+GroupHeaderOpenTop2:                SURFACE1
+GroupHeaderDisabled2:               BASE
+GroupHeaderDisabledTop2:            BASE
+GroupBody2:                         BASE
+
+GroupHeader3:                       MANTLE
+GroupHeaderTop3:                    MANTLE
+GroupHeaderHi3:                     SURFACE0
+GroupHeaderHiTop3:                  SURFACE0
+GroupHeaderOpen3:                   SURFACE1
+GroupHeaderOpenTop3:                SURFACE1
+GroupHeaderDisabled3:               MANTLE
+GroupHeaderDisabledTop3:            MANTLE
+GroupBody3:                         MANTLE
+
+GroupLight:                         SURFACE0
+
+CreateAssetScope:                   BLUE
+CreateAssetAuthor:                  CYAN
+CreateAssetBranch:                  GREEN
+CreateAssetBasename:                YELLOW
+CreateAssetVersion:                 MAGENTA
+
+InfoBG:                             BLACK
+InfoText:                           TEXT
+
+PopupHelpBG:                        BLACK
+PopupHelpFG:                        TEXT
+PopupHelpHotkeyFG:                  OVERLAY2
+PopupExtraHelpFG:                   TEXT
+PopupExtraHelpBG:                   HSV 220 0.425 0.4
+
+ShelfGradHi:                        DRKGRADHIGH
+ShelfGradMidHi:                     DRKGRADMID
+ShelfGradMidLow:                    DRKGRADMID
+ShelfGradLow:                       DRKGRADLOW
+
+// This does not appear to be used
+ShelfBG:                            EMPTY
+
+ShelfEmptyBG:                       EMPTY
+ShelfTabActiveHi:                   DRKGRADHIGH
+ShelfTabActiveLow:                  DRKGRADHIGH
+ShelfTabInactiveHi:                 MANTLE
+ShelfTabInactiveLow:                MANTLE
+
+PaneTabActiveHi:                    DRKGRADHIGH
+PaneTabActiveLow:                   DRKGRADHIGH
+PaneTabInactiveHi:                  MANTLE
+PaneTabInactiveLow:                 MANTLE
+PaneTabEdges:                       MANTLE
+PaneEmptyBG:                        EMPTY
+PaneBorder:                         MANTLE
+PaneHeaderGradHi:                   DRKGRADHIGH
+PaneHeaderGradLow:                  DRKGRADLOW
+PaneTabShadow:                      GREY(0.075)
+PaneTabMarker:                      SELECTION_BASE
+
+
+PathGadgetArrow1:                       SURFACE0
+PathGadgetArrow2:                       CRUST
+PathGadgetArrow3:                       SURFACE0
+PathGadgetArrow1Selected:               MANTLE
+PathGadgetArrow2Selected:               SELECTION_BASE
+PathGadgetArrow3Selected:               MANTLE
+PathGadgetPrimaryBorder:                CRUST
+PathGadgetSecondaryBorder:              CRUST
+PathGadgetPrimaryBorderSelected:        MANTLE
+PathGadgetSecondaryBorderSelected:      MANTLE
+PathGadgetBevel:                        SURFACE0
+PathGadgetBevelSelected:                SURFACE0
+PathGadgetText:                         TEXT
+PathGadgetGradHi:                       SURFACE0
+PathGadgetGradLow:                      SURFACE0
+PathGadgetGradHiSelected:               BASE
+PathGadgetGradLowSelected:              BASE
+PathGadgetHistoryButtonBevel:           BASE
+PathGadgetHistoryButtonBevelSelected:   BASE
+
+ViewportBorder:                     MANTLE
+ViewportDividers:                   SURFACE2
+ViewportInspectBox:                 SUBTEXT1
+ViewportInspectBorder:              SURFACE0
+ViewportInspectText:                BLACK
+
+ImageViewportBorder:                BASE
+ImageViewportBorderCurrent:         GREEN
+
+TreeNodeBG:                         MANTLE
+TreeNodeAlternateBG:                BASE
+TreeNodeSelectedBG:                 SELECTION_BASE
+TreeNodeSelectedFG:                 WHITE
+TreeNodeReservedParmFG:             OVERLAY1
+TreeNodeInvisibleParmFG:            TEXT
+TreeNodeInvisibleReservedParmFG:    OVERLAY1
+TreeLine:                           ARROW
+
+PerformanceGood:                    GREEN
+PerformanceBad:                     RED
+PerformanceWarn:                    ORANGE
+
+RecordBtnFlash:                     RED
+
+NetworkPerformanceGood:             #95A084
+NetworkPerformanceBad:              #D4AA9E
+NetworkPerformanceWarn:             #B0A957
+
+NodeConnectionDefaultBG:            GREY(0.5)
+NodeConnectionTextBG:               0.415 0.395 0.44
+NodeConnectionGlow:                 HSV 40 0.5 1
+NodeConnectionArrowLight:           BLACK
+NodeConnectionArrowDark:            BLACK
+NodeConnectionBevel:                GREY(0.6)
+NodeConnectionTopBorder:            BASE
+NodeConnectionBottomBorder:         BASE
+
+NodeButtonGrad:                     GREY(0.5)
+NodeButtonSelectedGrad:             UNK // NodeButtonSelectedGrad does not seem to be used anymore
+NodeButtonBevel:                    GREY(0.55)
+NodeButtonBevelSelected:            UNK
+NodeSeparator:                      BASE
+NodeSeparatorEnabled:               GREY(0.33)
+NodeError:                          ERROR
+NodeWarningBG:                      BLACK
+NodeWarningFG:                      1.0 0.87 0
+NodeDefaultBG:                      MANTLE
+NodeHighlight:                      0 0.68 0.94
+NodeDebugFG:                        0.741 0.988 1
+
+NodeTemplateFlag:                   #FF 66 FF
+NodeSelectableTemplateFlag:         #CC 33 CC
+NodeBypassFlag:                     1.0 1.0 0
+NodeRenderFlag:                     0.666 0.5 1.0
+NodeDisplayFlag:                    0 0.4 0.8
+NodeDisplayAndRenderFlag:           0 0.68 0.94
+NodeOutputFlag:                     ORANGE
+NodeSelectableFlag:                 0.4 0.8 0
+NodeExportFlag:                     ORANGE
+NodeHiddenFlag:                     0.58 0.55 0.43
+NodeAudioFlag:                      0.0 0.5 0.5
+NodeThumbnailFlag:                  0.35 0.6 0.2
+NodeLockFlag:                       #FF3300
+NodeSoftLockFlag:                   #C4E361
+NodeLoadedWithUnloadFlagOn:         1.0 0.0 1.0
+NodeDebugFlag:                      0.741 0.988 1
+
+NetworkSelection:                   HSV 65 1 0.95
+NetworkCurrent:                     HSV 45 1 0.95
+NetworkCurrentNonSelected:          GREY(1.0)
+NetworkBackground:                  MANTLE
+NetworkDisplayHighlight:            0.257655 0.396379 0.521569
+NetworkRenderHighlight:             0.375148 0.310776 0.498039
+NetworkOutputHighlight:             0.75 0.4 0.0
+NetworkTemplateHighlight:           #FF66FF
+NetworkLegacyHighlight:             #FF3333
+NetworkOverviewDragger:             WHITE
+NetworkTimeDependent:               0.0 1.0 0.0
+
+NetworkGrid:                        SURFACE0
+
+NetworkWireNormal:                  OVERLAY1
+NetworkWireActive:                  HSV 45 0.6 0.55
+NetworkWireActiveLight:             HSV 45 0.65 0.8
+NetworkWireHighlight:               1.0 1.0 0.0
+NetworkWireShadow:                  BLACK
+NetworkWireExtraNormal:             HSV 160 0.6 0.55
+NetworkWireExtraActive:             HSV 0 0.6 0.55
+NetworkWireExtraActiveLight:        HSV 0 0.65 0.8
+NetworkWireIKNormal:                HSV 240 0.6 0.55
+NetworkWireIKActive:                HSV 240 0.6 0.55
+NetworkWireIKActiveLight:           HSV 240 0.65 0.8
+NetworkWireOutputOverrideNormal:    1.0 1.0 1.0
+NetworkWireOutputOverrideHighlight: 1.0 0.784 0.0
+NetworkWireTimeDepNormal:           0.0 1.0 0.0
+NetworkWireLoopBack:                HSV 180 1.0 1.0 1.0
+NetworkWirePassThrough:             HSV 180 1.0 1.0 1.0
+
+StatusBarMessageFG:                 TEXT
+StatusBarMessageBG:                 CRUST
+
+StatusBarPromptFG:                  TEXT
+StatusBarPromptBG:                  HSV 40 0.6 0.6
+
+StatusBarWarningFG:                 TEXT
+StatusBarWarningBG:                 HSV 0 0.6 0.5
+
+StatusBarErrorFG:                   TEXT
+StatusBarErrorBG:                   HSV 0 1 1
+
+DopeSheetCurrentFrameFG:            WHITE
+DopeSheetCurrentFrameBG:            BLACK
+DopeSheetCurrentFrameOutOfBoundsFG: 1 0.75 0.3
+DopeSheetCurrentFrameOutOfBoundsBG: BLACK
+
+DopeSheetHoverFrameFG:              WHITE
+DopeSheetHoverFrameBG:              MANTLE
+DopeSheetHoverLine:                 OVERLAY0
+
+DopeSheetIndicatorLine:             BLACK
+DopeSheetIndicatorClickLine:        WHITE
+DopeSheetIndicatorOverLine:         OVERLAY0
+DopeSheetKnob:                      BLACK
+DopeSheetKnobClick:                 WHITE
+DopeSheetKnobOver:                  OVERLAY0
+DopeSheetKnobPendingKey:            SELECTION_BASE
+DopeSheetKnobOutlier:               1 1 0
+DopeSheetKeyActive:                 HSV 88 0.96 0.46
+DopeSheetKeyPartial2:               HSV 88 1.0 0.3
+DopeSheetKeyPartial:                HSV 88 0.96 0.7
+DopeSheetKeyPending:                SELECTION_BASE
+DopeSheetKeyMuted:                  BASE
+DopeSheetKeyOverlay:                1 0 0
+DopeSheetKeyDisabled:               0.5 0 1
+DopeSheetKeySelected:               SELECTION_HIGHLIGHT2
+DopeSheetKeySelectedBorder:         BLACK
+DopeSheetKeySelecting:              1 0.45 0.25
+DopeSheetKeySelectingBorder:        1 0 0                   // RED
+DopeSheetOutsideRangeBG:            SURFACE0
+DopeSheetSimulation:                0 0.5 1
+DopeSheetSimulationReset:           1 0.5 0
+DopeSheetSimulationPlaying:         0.59 0.48 0.7
+DopeSheetTimeline:                  SUBTEXT0
+DopeSheetTimelineAudio:             OVERLAY0
+DopeSheetTickLarge:                 OVERLAY1
+DopeSheetTickSmall:                 SURFACE2
+DopeSheetTickSmallAudio:            SURFACE1
+DopeSheetTickNumber:                OVERLAY0
+DopeSheetRangeNumber:               SURFACE0
+DopeSheetRowDisabled:               BLACK
+DopeSheetRowLight:                  MANTLE
+DopeSheetRowDark:                   BASE
+DopeSheetColLine:                   BLACK
+DopeSheetRowLine:                   BLACK
+DopeSheetViewLock:                  OVERLAY0
+DopeSheetSelection:                 HSV 60 1.0 0.5
+DopeSheetSelectionHover:            HSV 60 0.5 0.9
+DopeSheetSelectionActive:           HSV 60 0.5 0.9
+DopeSheetSelectionInactive:         HSV 60 0.9 0.7
+DopeSheetSelectionInactiveLock:     1 0 1
+DopeSheetSelectionText:             BLACK
+DopeSheetSelectionRemove:           1 0 0
+DopeSheetOverwriteHover:            1 0 0
+DopeSheetOverwriteActive:           0.7 0 0
+DopeSheetOverwriteInactive:         0.9 0 0
+DopeSheetSpreadSheetText:           BLACK
+DopeSheetSpreadSheetDisabled:       0.07 0 0
+DopeSheetRippleTool:                1 1 0
+
+// Default Colors for Playbar Bookmarks
+Bookmark1:                          CYAN
+Bookmark2:                          ORANGE
+Bookmark3:                          #7C60AA
+Bookmark4:                          MAGENTA
+Bookmark5:                          GREEN
+Bookmark6:                          YELLOW
+Bookmark7:                          #AF765B
+
+BorderLight:                        CRUST
+BorderDark:                         CRUST
+
+AssetBannerBackground:              CRUST
+AssetUpdateStatusBackground:        0.19 0.28 0.38
+AssetUpdateStatusText:              WHITE
+OrboltSplashscreenProgressbar:      0.19 0.28 0.38
+
+MplayInspectBox:                    SUBTEXT1
+MplayInspectBorder:                 SURFACE0
+MplayInspectText:                   BLACK
+MplayColorCorrectWarn:              1 1 0.75
+//
+// The following colors are used on the top control panels
+// within the desktop panes to indicate the current data type.
+// These are Tints, not colors, so beware of modifying the saturation
+// or brightness.
+//
+ObjectColor:                        HSV 210 0.20 1.75
+SopColor:                           HSV 100 0.20 2
+DopColor:                           HSV 0 0.20 2
+PopNetColor:                        HSV 170 0.20 1.75
+PopColor:                           HSV 170 0.20 1.75
+ShopColor:                          HSV 340 0.20 1.75
+VopNetColor:                        HSV 260 0.20 1.75
+VopColor:                           HSV 260 0.20 1.75
+ChopNetColor:                       HSV 60 0.20 1.75
+ChopColor:                          HSV 60 0.20 1.75
+CopNet2Color:                       HSV 40 0.20 2
+CopColor:                           HSV 40 0.20 2
+Cop2Color:                          HSV 40 0.20 2
+OutputColor:                        HSV 20 0.20 2
+RootColor:                          HSV 0 0 1
+
+// Channel Editor Colors ---------------------------------------------------
+//
+// These colors for for graphical elements in the Channel Editor
+//
+ChannelEditorBackground:            0.00 0.00 0.00      // Background of the graph
+ChannelEditorBGOutsideGlobal:       CRUST           // Background of the graph outside the global time range
+
+ChannelEditorBGOutsidePlayback:     0.093 0.086 0.051   // Background of the graph outside the playback range
+
+ChannelEditorTimebar:               1.00 1.00 1.00  // Color of timebar to be xored on top
+ChannelEditorGridLine:              0.20 0.20 0.20  // Graph grid line
+ChannelEditorGridDashedLine:        0.20 0.20 0.20  // Graph grid dashed line
+ChannelEditorHandleDefault:         0.50 0.50 0.50  // Handles
+ChannelEditorHandleSelected:        1.00 1.00 0.00  // Selected handle
+ChannelEditorHandleLocated:         0.80 0.80 0.80  // Handle when mouse is on top
+ChannelEditorHandleSelectedLocated: 1.00 1.00 0.80  // Selected handle when mouse is on top
+ChannelEditorStatsText:             1.00 1.00 1.00  // Color of the stats text
+ChannelEditorTimeText:              EDIT_BG         // Color of the bottom time text
+ChannelEditorViewLock:              OVERLAY0
+
+ChannelListCircleOutline:           BLACK
+
+// Chop Editor Colors ---------------------------------------------------
+//
+// These colors for for graphical elements in the Chop Editor
+//
+ChopEditorTimeBar:                  0.00 0.00 0.00
+
+// Channel Colors ----------------------------------------------------------
+//
+// These colors are for coloring channels in various places in Houdini
+// (eg. the Channel Editor and Channel List panes).
+//
+// They are currently divided into 4 groups:
+//   - red colors:   for channel names ending in x or r
+//   - green colors: for channel names ending in y or g
+//   - blue colors:  for channel names ending in z or b
+//   - other colors: for channel names not ending in letters mentioned above
+// The channel names ending r, g, or b always use the first entry of each of
+// their respective color groups.
+//
+// Each color group contains an arbitrary number of similar colors, uniquely
+// determined by their numeric suffix.  When determining the color of a
+// particular channel, both its node and channel name is used. For example,
+// point1/tx and point1/vx will be both be reds of different hues, which in turn
+// will also differ from point2/tx and point2/vx.
+//
+ChannelColorRed1:               #f87171  // Red400
+ChannelColorRed2:               #fb7185  // Rose400
+ChannelColorRed3:               #f472b6  // Pink400
+ChannelColorRed4:               #dc2626  // Red600
+ChannelColorRed5:               #e11d48  // Rose600
+ChannelColorGreen1:             #4ade80  // Green400
+ChannelColorGreen2:             #a3e635  // Lime400
+ChannelColorGreen3:             #34d399  // Emerald400
+ChannelColorGreen4:             #2dd4bf  // Teal400
+ChannelColorGreen5:             #16a34a  // Green600
+ChannelColorBlue1:              #60a5fa  // Blue400
+ChannelColorBlue2:              #38bdf8  // Sky400
+ChannelColorBlue3:              #22d3ee  // Cyan400
+ChannelColorBlue4:              #2563eb  // Blue600
+ChannelColorBlue5:              #0284c7  // Sky600
+ChannelColorOther1:             #fbbf24  // Amber400
+ChannelColorOther2:             #2dd4bf  // Teal400
+ChannelColorOther3:             #e879f9  // Fuchsia400
+ChannelColorOther4:             #fb923c  // Orange400
+ChannelColorOther5:             #0d9488  // Teal600
+ChannelColorOther6:             #c084fc  // Purple400
+
+// Geometry group colors ---------------------------------------------------
+//
+// These two colors specify opposing corners of a quadrilateral in HSV space.
+// Colors for geometry groups are sampled from within this quad.
+//
+GeoGroupColor1:                 HSV  90.0 0.3 1.0
+GeoGroupColor2:                 HSV 330.0 0.6 1.0
+
+// Syntax highlighting in editors and input boxes
+ParmSyntaxPlainColor:           SUBTEXT0                      //#bcbec3
+ParmSyntaxStringColor:          GREEN                         //#79a978
+ParmSyntaxVarColor:             MAGENTA                       //#c892ca
+ParmSyntaxFuncColor:            #7C60AA //#8888c1
+ParmSyntaxKeywordColor:         BLUE                          //#6799c0
+ParmSyntaxQuoteColor:           #915C45  //#c59172
+ParmSyntaxNumberColor:          ORANGE                        //#ebb845
+ParmSyntaxRefColor:             YELLOW                        //#d2cf9c
+ParmSyntaxCommentColor:         OVERLAY1                      //#7b7e84
+ParmSyntaxErrorColor:           RED                           //#e14640
+ParmSyntaxTypeColor:            CYAN                          //#93d4eb
+ParmSyntaxExtraColor:           #D73458  //#8b588a
+
+ParmParenMatchColor:            ORANGE
+ParmQuoteMatchColor:            ORANGE
+ParmMisMatchColor:              RED
+
+PreEditUnderlineColor:          SELECTION_BASE
+TextboxLineNumberFG:            TEXT
+TextboxLineNumberBG:            MANTLE
+TextboxLineNumberHighlight:     DRKGRADHIGH
+
+// Old UI Resources ----------------------------------------------------------
+
+ForegroundColor:                BLACK
+BackgroundColor:                UNK
+PaperColor:                     BLACK
+TextHighlightColor:             TEXT_HIGHLIGHT
+
+ButtonColor:                    DRKGRADHIGH
+ButtonStripColor:               UNK
+
+ListTitleColor:                 EDIT_BG
+ListEntryColor:                 OVERLAY1
+ListEntrySelectedColor:         SECONDARY
+
+MenuBarColor:                   SUBTEXT0
+MenuColor:                      OVERLAY2
+BlueSelectedMenuColor:          0.125   0.125   1
+
+SliderColor:                    OVERLAY2
+SliderThumbColor:               OVERLAY2
+InputColor:                     OVERLAY2
+RadioColor:                     OVERLAY1
+
+IconBackgroundColor:            BLACK
+IconOutlineColor:               SUBTEXT1
+IconShadowColor:                BLACK
+IconLocatedColor:               UNK
+
+DisabledTextColor:              ARROW
+DisabledTextDropShadowColor:    SUBTEXT1
+PopupHelpBackgroundColor:       SELECTION_HIGHLIGHT2
+
+// New colors for Popup windows (Ex. Anonymous Usage Stats Window)
+PopupWindowTextColor:           WHITE
+BlueTextLinkColor:              MAGENTA
+
+// Note:    the luminance levels of most of these colors should be similar
+// so that none of them stands out too much and so that the text
+// in the parameter fields will be readable.
+//
+
+NormalColor:                    0.0         0.0     0.0     // Not used
+LockedColor:                    HSV 200     0.3     0.3     // Parameter is locked
+PendingColor:                   HSV 60      0.5     0.5     // Pending change
+IsKeyColor:                     HSV 120     0.5     0.55    // Keyframe
+IsSoftKeyColor:                 #0D3D28                     // constant() or raw() usually.
+IsNotKeyColor:                  HSV 180     0.5     0.5     // Channel, not at a key. (Expression)
+DisabledColor:                  HSV 207     0.27    0.75    // Channel is disabled (muted) from dopesheet
+ChannelLockedColor:             HSV 0       0       0.2     // Has "lock()" expression
+OverrideColor:                  HSV 45      1       0.65    // Parameter is overridden by chop
+OtherLanguageColor:             #653D66                     // Expr language differs from node lang.
+AutoTakeExcluded:               HSV 42      0.17    0.31    // Exluded from take, and auto-take is on.
+
+NonDefAccentColor:              UNK                         // Accent for non-default parms
+ChanRefAccentColor:             UNK                         // Accent for !!ch()!! parms
+DisabledAccentColor:            UNK                         // Accents are this color when disabled
+
+ScopedBlend:                    0.9 0.25 0.97
+ScopedBaseColor:                EDIT_BG
+ScopedColor:                    HSV 40 0.825 0.525
+ScopedBaseSelectedColor:        EDIT_BG
+ScopedSelectedColor:            WHITE
+#AutoScopedColor:               HSV 40 0.125 0.375  // Low saturation orange grey, This matches the orange selection Hue.
+AutoScopedColor:                HSV 210 0.125 0.375 // Low saturation blue grey, This matches the blue slider Hue.
+
+ScopedAlpha:                    1.0 1.0 1.0
+
+
+// Parm border colors indicating that the parm has a handle associated with it:
+
+// handle is invisible, probably XCF
+InvisibleHandleColor:           0.70 0.00 0.00      // See rows/columns in Torus SOP
+// handle is visible, eg. xform handle
+VisibleHandleColor:             0.00 0.50 0.50
+// handle is active
+ActiveHandleColor:              SELECTION_BASE
+
+// The following are used for the flag buttons in the group and node
+// tiles and listers.
+
+SelectOnColor:                  0.75    0.75    0
+SelectOffColor:                 0.56    0.56    0
+DisplayOnColor:                 0.3     0.5     1
+DisplayOffColor:                0.2     0.3     0.6
+TemplateOnColor:                1       0.5     1
+TemplateOffColor:               0.75    0.37    0.75
+BypassOnColor:                  1       0.5     0
+BypassOffColor:                 0.5     0.25    0
+SelectableOnColor:              0.6     0.35    0.2
+SelectableOffColor:             0.4     0.2     0.15
+ExposeOnColor:                  1       0       0
+ExposeOffColor:                 0.6     0       0
+CurrentColor:                   0.25    0.85    0.25
+
+SplitBarBackground:             DRKGRADHIGH
+SplitBarEdgeColor:              CRUST
+SplitBarLightColor:             CRUST
+SplitBarDarkColor:              CRUST
+SplitBarPaneOutline:            DRKGRADHIGH
+SplitBarGrippyColor:            ARROW
+SplitBarHighlight:              SECONDARY
+SplitBarHighlight2:             #D9BF71
+
+
+PlayBarOnColor:                 #869910
+PlayBarOffColor:                SURFACE0
+PlayBarDisabledColor:           SURFACE2
+PlayBarResetColor:              YELLOW
+PlayBarNoPending:               #869910
+PlayBarNoPending2:              GREEN
+PlayBarPending:                 #9D821D
+PlayBarPending2:                #867B3A
+PlayBarAudioWaveColor:          OVERLAY1
+PlayBarStartEndFieldBG:         EDIT_BG
+PlayBarGStartEndFieldBG:        EDIT_BG
+
+// The following are used for the indicator colours in the info button
+ErrorFlag:                      0.9     0.1     0.1
+WarningFlag:                    1       1       0
+MessageFlag:                    0.8     0.8     0.8
+FilteredFlag:                   0.6     0.6     0.6
+
+// The NoSaveFlag color is used in the resource managers for .nosave files
+NoSaveFlag:                     0.0     0.4     0.1
+
+// The following colors are for the status bar
+MessageColor:                   0.0     0.0     0.0
+PromptColor:                    0.3     0.4     0.9
+WarningColor:                   0.85    0.25    0.0
+ErrorColor:                     ERROR
+
+// The following color is for the SHOP viewer
+ShopViewTitleColor          1.0 1.0 0.0
+
+// The following colors are for Vop input/output labels
+VopInOutVectorColor:            #60C279
+VopInOutVectorArrayColor:       #448C69
+VopInOutVector2Color:           #27FF00
+VopInOutVector2ArrayColor:      #178902
+VopInOutVector4Color:           #C6FF00
+VopInOutVector4ArrayColor:      #6F8F00
+VopInOutNormalColor:            #A4A4FF
+VopInOutColorColor:             #FF24FF
+VopInOutFloatColor:             #55D2C5
+VopInOutFloatArrayColor:        #218278
+VopInOutIntColor:               #45B5FF
+VopInOutIntArrayColor:          #21668A
+VopInOutStringColor:            #CCB299
+VopInOutStringArrayColor:       #A97442
+VopInOutMatrix2Color:           #D367FF
+VopInOutMatrix2ArrayColor:      #783A91
+VopInOutMatrix3Color:           #B367FF
+VopInOutMatrix3ArrayColor:      #6A488C
+VopInOutMatrix4Color:           #7F68FE
+VopInOutMatrix4ArrayColor:      #5B5195
+VopInOutPointColor:             #EF99D5
+VopInOutBsdfColor:              #F8E71C
+VopInOutStructColor:            #DE796E
+VopInOutStructArrayColor:       #A45858
+VopInOutMethodColor:            #FF9900
+VopInOutMultiColor:             #E5E5E5
+VopErrorColor:                  ERROR
+VopInOutDictColor:              #D29628
+VopInOutDictArrayColor:         #B5700A
+
+// The following colors are for Cop input/output labels
+CopInOutIntColor:               #99DDFF
+CopInOutFloatColor:             #77AADD
+CopInOutVector2Color:           #EE8866
+CopInOutVectorColor:            #44BB99
+CopInOutVector4Color:           #BBCC33
+CopInOutGeometryColor:          #FFAABB
+
+CopInOutIntVDBColor:            #e6f7ff
+CopInOutFloatVDBColor:          #cce6ff
+CopInOutVectorVDBColor:         #00ffb7
+
+CopInOutMetadataColor:          #DDDDDD
+CopInOutUndefColor:             #FFFFFF
+
+CopInOutCableColor:             #56AE56
+CopInOutCableInnerColor:        #B8F27D
+CopInOutCablePlugColor:         #B8F27D
+
+// The colors for SHOP input output labels
+ShopInOutSurfaceColor:          #e5b299
+ShopInOutShadowColor:           #33334c
+ShopInOutDisplaceColor:         #99b2e5
+ShopInOutGeometryColor:         #b2e5b2
+ShopInOutLightColor:            #e5e599
+ShopInOutFogColor:              #b2b2b2
+ShopInOutPropertiesColor:       #7fcce5
+ShopInOutShaderColor:           #e5e5e5
+ShopInOutImage3dColor:          #66e5b2
+ShopInOutImage3dArrayColor:     #4cb299
+
+// The following colors are for Dop input/output labels
+DopInOutObjectColor:            #a5a5a5
+DopInOutDataColor:              #7fcc7f
+DopInOutRelDataColor:           #339933
+DopInOutSolverColor:            #b27fe5
+DopInOutAnyColor:               #e5e5e5
+
+// The following colors are for Top graph nodes
+TopInOutColor_file:             #93A1A1
+TopInOutColor_file/image:       #2AA198
+TopInOutColor_file/geo:         #268BD2
+TopInOutColor_file/csv:         #CB4B16
+TopInOutColor_file/movie:       #859900
+TopInOutColor_file/archive:     #B58900
+TopInOutColor_nonfile:          #D33682
+
+// The following colors are for simple spreadsheets (ie. tables)
+SSTableBackgroundColor:         0.9     0.9     0.9
+SSTableSelectedColor:           0.125   0.125   1.0
+
+// The following colors are for parameter spreadsheets
+ParmSheetEmptyColor:            0.65    0.65    0.65
+ParmSheetHeaderColor:           0.60    0.60    0.60
+
+// The following color is used for buttons that simulate a hyper-text link
+HyperTextLinkColor:             1.0     0.0     1.0
+
+// The following colors are used to highlight the names of operators that have
+// a given property (e.g. modified parameters)
+// Houdini's list mode tries to be smart and changes the value based on
+// some arbitrary thing.  (Network BG color?)  Anyway, leaving the value
+// at one seems to force it into a happy state.
+OpNameNoneColor:                TEXT
+OpNameCommentsColor:            HSV 240 0.6 1
+OpNameAnimatedColor:            UNK
+OpNameModifiedColor:            UNK
+OpNameChoppedColor:             UNK
+OpNameSyncedColor:              HSV 200 0.6 1
+OpNameUnsyncedColor:            HSV 0   0.6 1
+OpNameSubnetColor:              HSV 240 0.3 1
+
+// The following color is used for the text in the parameter title bar that
+// indicates how many nodes are selected
+ParmTitleBarNumSelectedC        olor:   1.0 1.0 0.0
+
+// The following color is used for the text in the take label to indicate that
+// the auto take mode is enabled
+AutoTakeModeColor:              0.40    0.70    0.40
+
+// These colors are used by the operator type manager.
+OTLUnusedColor:                 0.70    0.10    0.10
+OTLOutOfDateColor:              0.70    0.70    0.10
+OTLPreferredColor:              0.20    0.70    0.20
+
+// These colors are used by the simulation tree view.
+SIMAltRepColor:                 0.20    0.70    0.20
+SIMObjectColor:                 BLACK
+SIMDataColor:                   BLACK
+SIMRelDataColor:                BLACK
+SIMRecordColor:                 BLACK
+SIMAffectorsColor:              BLACK
+SIMGroupsColor:                 BLACK
+SIMEngineColor:                 BLACK
+SIMEngineInterpColor:           0.70    0.70    0.10
+SIMAffectorColor:               0.10    0.10    0.60
+SIMMutualColor:                 0.20    0.70    0.20
+SIMAlmostMutualColor:           0.70    0.70    0.10
+
+// These colors are used by the linker tree views.
+LinkerPartialLinkColor:         GREY(0.8)
+
+// The following colors are used by the network editor in list mode
+OpListHeaderBGColor:            SUBTEXT0
+OpListSplitterColor:            BLACK
+OpListSelectionBGColor:         SELECTION_BASE
+OpListSelectionFGColor:         WHITE
+
+// These colors are used by the file dependency dialog
+FileDepAcceptColor:             0.0 1.0 0.0
+FileDepRejectColor:             1.0 0.0 0.0
+
+// Colors for the shaded pick box
+ShadedPickOutline:              0.6 0.6 0.6
+ShadedPickInnerLine:            0.3 0.3 0.3
+ShadedPickFill:                 0.2 0.2 0.2
+
+// Hotkey Editor keyboard --------------------------------------------
+
+KeyCapUnavailableFill:          SURFACE0
+KeyCapUnavailableHover:         SURFACE1
+
+KeyCapAssignedFill:             SURFACE2
+KeyCapAssignedHover:            OVERLAY0
+
+KeyCapDefaultFill:              OVERLAY1
+KeyCapDefaultHover:             OVERLAY2
+
+ModifierKeyOffFill:             BASE
+ModifierKeyOffHover:            SURFACE0
+
+KeyCapSelectionBorder:          WHITE
+KeyCapSelectionText:            WHITE
+
+ShiftKeyBorder:                 #7F5050
+ShiftKeyFill:                   #AF7070
+ShiftKeyHilite:                 #CF9090
+
+CtrlKeyBorder:                  #436892
+CtrlKeyFill:                    #5883B4
+CtrlKeyHilite:                  #78A3D4
+
+AltKeyBorder:                   #658245
+AltKeyFill:                     #8EA37D
+AltKeyHilite:                   #AEC39D
+
+CmdKeyBorder:                   #9A7B49
+CmdKeyFill:                     #BBAB28
+CmdKeyHilite:                   #DBCB48
+
+// Scene Graph Panes --------------------------------------------
+
+UsdLocationHasArcs:             #1AB226
+UsdLocationIsInstance:          #87CEFA
+UsdLocationIsInactive:          #858585
+UsdLocationInPrototype:         #7983E2
+UsdLocationUnloaded:            #D97D26
+UsdLocationLoaded:              #E0AB29
+UsdLayerMuted:                  #9090E0
+UsdLayerHasOpinion:             #E07000
+UsdLayerChildHasOpinion:        #A04000
+UsdLayerModifiedByCurrentLop:   #40A000
+UsdLocationIsImplicit:          #858585
+
+UsdAttrResolveFallback:         #DE9E2E
+UsdAttrResolveDefault:          #87CEFA
+UsdAttrResolveValueClips:       #E696E6
+UsdAttrResolveTimeSamples:      #B1CF99
+UsdAttrResolveNone:             OVERLAY0
+UsdRelationship:                #E68484
+UsdComputed:                    #8484E6
+
+UsdPrimSelected:                SELECTION_BASE
+UsdPrimSelectedAlpha:           0.4
+UsdChildPrimSelected:           0.44    0.22    0.11
+UsdChildPrimSelectedAlpha:      0.4
+UsdPrimModified:                0.30    0.80    0.80
+UsdPrimModifiedAlpha:           0.4
+UsdChildPrimModified:           0.15    0.40    0.40
+UsdChildPrimModifiedAlpha:      0.4
+
+UsdHighDescendentsCount:        1.0     0.4     0.2
+
+// Light/Material Linker Colours---------------------------------
+LinkRuleTarget:                 BASE
+LinkRuleTargetReadOnly:         GREY(0.086)
+LinkRuleIncludes:               SURFACE0
+LinkRuleExcludes:               BASE
+ShadowLinkRuleTarget:           SURFACE0
+ShadowLinkRuleTargetReadOnly:   CRUST
+ShadowLinkRuleIncludes:         SURFACE1
+ShadowLinkRuleExcludes:         SURFACE0
