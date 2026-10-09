@@ -1,4 +1,4 @@
-Scheme: soalrized_dark
+Scheme: solarized_dark
 
 // Palette
 #define GREY(g)         g g g
