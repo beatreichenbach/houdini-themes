@@ -19,7 +19,7 @@ jobs:
         run: |
           mkdir -p build
           cp -r config build/
-          cp source/resources build/config/
+          cp source/resources.std build/config/
           cd build
           zip -r ../houdini-themes-${{ github.ref_name }}.zip .
 

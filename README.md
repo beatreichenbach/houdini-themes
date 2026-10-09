@@ -10,7 +10,7 @@ Download the latest [release](https://github.com/beatreichenbach/houdini-themes/
 To install copy the configs from the `config` directory to the config directory
 in the Houdini Preferences location: `~\houdini\houdini21.0\config`.
 
-To set a monospace font, copy the `resources` file to the same `config` directory.
+To set a monospace font, copy the `resources.std` file to the same `config` directory.
 
 ## Previews
 
